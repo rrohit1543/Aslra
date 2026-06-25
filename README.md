@@ -33,26 +33,22 @@ A research-driven prototype where a user can:
 ## 2. Tech Stack (FINAL — Approved by User)
 
 | Layer | Technology | Version | Purpose |
-|-------|-----------|---------|---------|
-| **Backend** | FastAPI | latest | REST API, rule engine, NLP pipeline |
-| **Python** | 3.10+ | — | Runtime |
-| **Arabic NLP** | CAMeL Tools | latest | Morphological analysis, tokenization, POS tagging |
-| **Data Format** | YAML | — | Rules, sources, dictionary — human-readable, expert-editable |
-| **Models** | Pydantic v2 | latest | Request/response validation |
-| **Server** | Uvicorn | latest | ASGI server |
+|-------|-----------|---------|---------| 
+| **Backend** | FastAPI | 0.116.1 | REST API, rule engine, NLP pipeline |
+| **Python** | 3.9+ | 3.9.13 | Runtime |
+| **Data Format** | YAML (PyYAML) | 6.0.2 | Rules, sources, dictionary — human-readable, expert-editable |
+| **Models** | Pydantic v2 | 2.11.7 | Request/response validation |
+| **Server** | Uvicorn | 0.39.0 | ASGI server |
 | **Frontend** | HTML + Vanilla CSS + JS | — | No framework, no build step |
 | **Frontend Serving** | FastAPI StaticFiles | — | Single `uvicorn` command runs everything |
 
 ### Key Dependencies (requirements.txt)
 ```
-fastapi
-uvicorn[standard]
-pyyaml
-camel-tools
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+pyyaml>=6.0
 pydantic>=2.0
 ```
-
-> **NOTE**: `camel-tools` may require additional setup (Java, model downloads). This is documented in Phase 2.
 
 ---
 
