@@ -11,7 +11,7 @@
 ## 1. Project Overview
 
 **Project Name**: Arabic Sign Language Grammar Discovery & Explainable Transcription Prototype  
-**Project Directory**: `arsl-transcriber/`  
+**Project Directory**: `C:\Users\rrohi\scratch\arsl-transcriber\`  
 
 ### What We Are Building
 
@@ -164,7 +164,189 @@ arsl-transcriber/
 
 ---
 
-## 5. Phase Definitions & Boundaries
+## 5. Grammar Rules Reference
+
+The transcription engine uses 16 rules across 13 categories. Each rule is backed by cited evidence from our source inventory.
+
+> **Evidence Types:** 🟢 Explicit (directly stated in source) · 🟡 Inferred (pattern observed across examples) · 🔴 Speculative (reasonable guess, no direct evidence)
+
+### R-01 — Topic-Comment Word Order
+| | |
+|---|---|
+| **Category** | Word Order |
+| **Confidence** | 🟢 High |
+| **Evidence** | 🟢 Explicit |
+| **What it does** | ArSL follows a Topic-Comment structure. The subject/topic comes first, then the object/location, then the verb — contrasting Arabic's typical VSO order. |
+| **Example** | `ذهب الطالب إلى المدرسة` → `طالب / مدرسة / ذهب` |
+
+---
+
+### R-02 — Time Expression Fronting
+| | |
+|---|---|
+| **Category** | Time |
+| **Confidence** | 🟢 High |
+| **Evidence** | 🟢 Explicit |
+| **What it does** | Time words (yesterday, tomorrow, now, etc.) are moved to the very beginning of the sentence to set the temporal context before anything else. |
+| **Example** | `ذهب الطالب إلى المدرسة أمس` → `أمس / طالب / مدرسة / ذهب` |
+
+---
+
+### R-03 — Negation Handling
+| | |
+|---|---|
+| **Category** | Negation |
+| **Confidence** | 🟡 Medium |
+| **Evidence** | 🟡 Inferred |
+| **What it does** | Arabic negation particles (`لم`, `لن`, `لا`, `ما`, `ليس`) are removed and replaced with a single negation sign (`لا`) placed at the end of the clause. A headshake non-manual marker is implied. |
+| **Example** | `لم يذهب أحمد إلى المدرسة` → `أحمد / مدرسة / ذهب / لا` |
+
+---
+
+### R-04 — WH-Question Formation
+| | |
+|---|---|
+| **Category** | Question |
+| **Confidence** | 🟡 Medium |
+| **Evidence** | 🟡 Inferred |
+| **What it does** | WH-question words (`أين`, `ماذا`, `من`, `متى`, `كيف`, `لماذا`, `كم`) are moved to the end of the gloss sequence. Accompanied by furrowed eyebrows (non-manual marker). |
+| **Example** | `أين تعمل؟` → `عمل / أين` |
+
+---
+
+### R-04b — Yes/No Question Formation
+| | |
+|---|---|
+| **Category** | Question |
+| **Confidence** | 🟡 Medium |
+| **Evidence** | 🟡 Inferred |
+| **What it does** | Yes/No questions keep the same word order as declarative sentences. The particle `هل` is dropped. Meaning is conveyed through non-manual signals (raised eyebrows, forward head tilt). |
+| **Example** | `هل أنت طالب؟` → `أنت / طالب [+NMM:سؤال]` |
+
+---
+
+### R-05 — Pronoun Simplification
+| | |
+|---|---|
+| **Category** | Pronoun |
+| **Confidence** | 🟡 Medium |
+| **Evidence** | 🟡 Inferred |
+| **What it does** | Arabic's many pronoun forms (gender, number, case) are simplified to a pointing system — self-point (1st person), forward-point (2nd person), side-point (3rd person). |
+| **Example** | `أنا أحب القراءة` → `أنا / قراءة / حب` |
+
+---
+
+### R-06 — Preposition Dropping
+| | |
+|---|---|
+| **Category** | Preposition |
+| **Confidence** | 🟢 High |
+| **Evidence** | 🟢 Explicit |
+| **What it does** | Arabic prepositions (`إلى`, `في`, `من`, `على`, `بـ`, `لـ`, `عن`) are dropped because spatial relationships in ArSL are expressed through sign movement, location, and direction instead. |
+| **Example** | `ذهب إلى المدرسة` → `مدرسة / ذهب` |
+
+---
+
+### R-07 — Definite Article (الـ) Dropping
+| | |
+|---|---|
+| **Category** | Article |
+| **Confidence** | 🟢 High |
+| **Evidence** | 🟢 Explicit |
+| **What it does** | The Arabic definite article (`الـ`) is stripped from all words. ArSL does not use articles — definiteness is understood from context. Dictionary entries use the bare/lemma form. |
+| **Example** | `المدرسة` → `مدرسة` · `الكتاب` → `كتاب` |
+
+---
+
+### R-08 — Verb Tense Simplification
+| | |
+|---|---|
+| **Category** | Tense |
+| **Confidence** | 🟡 Medium |
+| **Evidence** | 🟡 Inferred |
+| **What it does** | Arabic verb conjugation and tense prefixes (`سـ` for future, `يـ/تـ` for present) are stripped. The verb is signed in its base/root form. Tense is conveyed by a separate time expression already fronted in the sentence. |
+| **Example** | `سأشتري` → `مستقبل / شراء` · `ذهبت أمس` → `أمس / ذهب` |
+
+---
+
+### R-09 — Adjective Placement After Noun
+| | |
+|---|---|
+| **Category** | Adjective |
+| **Confidence** | 🟡 Medium |
+| **Evidence** | 🟡 Inferred |
+| **What it does** | Adjectives follow the noun they modify (same as Arabic). Gender/number agreement suffixes are removed — the adjective is signed in its base (masculine singular) form. |
+| **Example** | `هذا الكتاب جميل جداً` → `هذا / كتاب / جميل / جداً` |
+
+---
+
+### R-10 — Noun Phrase Simplification
+| | |
+|---|---|
+| **Category** | Noun Phrase |
+| **Confidence** | 🔴 Low |
+| **Evidence** | 🟡 Inferred |
+| **What it does** | Complex noun phrases (demonstratives, possessives, multiple modifiers) are simplified. Order: Demonstrative → Noun → Possessive → Adjective. Articles and case markers are dropped. |
+| **Example** | `هذا الكتاب جميل` → `هذا / كتاب / جميل` |
+
+---
+
+### R-11 — Number Before Noun
+| | |
+|---|---|
+| **Category** | Number |
+| **Confidence** | 🟡 Medium |
+| **Evidence** | 🟡 Inferred |
+| **What it does** | Numbers precede the noun they quantify. The noun is always signed in singular form regardless of the number — Arabic's complex number-noun agreement is simplified. |
+| **Example** | `ثلاثة كتب` → `ثلاثة / كتاب` · `خمسة طلاب` → `خمسة / طالب` |
+
+---
+
+### R-12 — Non-Manual Markers Annotation
+| | |
+|---|---|
+| **Category** | Non-Manual |
+| **Confidence** | 🟢 High |
+| **Evidence** | 🟢 Explicit |
+| **What it does** | Facial expressions, head movements, and body shifts are essential grammar in ArSL. The engine annotates these with `[+NMM:type]` tags (e.g., `سؤال` for questions, `نفي` for negation). |
+| **Example** | `أين تعمل؟` → `عمل / أين [+NMM:سؤال]` |
+
+---
+
+### R-13 — Fingerspelling Fallback
+| | |
+|---|---|
+| **Category** | Fallback |
+| **Confidence** | 🟢 High |
+| **Evidence** | 🟢 Explicit |
+| **What it does** | Words not found in the sign dictionary are fingerspelled using the Arabic manual alphabet. This is standard for proper nouns, technical terms, and new vocabulary. Marked as `fs(word)`. |
+| **Example** | `ذهب محمد إلى الجامعة` → `fs(محمد) / جامعة / ذهب` |
+
+---
+
+### R-14 — Conjunction Dropping
+| | |
+|---|---|
+| **Category** | Preposition |
+| **Confidence** | 🟡 Medium |
+| **Evidence** | 🟡 Inferred |
+| **What it does** | Arabic conjunctions (`و`, `ف`, `ثم`, `أو`, `لكن`) are dropped. Sequential actions are shown through temporal sequencing of signs rather than explicit connectors. |
+| **Example** | `أكل وشرب` → `أكل / شرب` |
+
+---
+
+### R-15 — Demonstrative Retention
+| | |
+|---|---|
+| **Category** | Noun Phrase |
+| **Confidence** | 🟡 Medium |
+| **Evidence** | 🟡 Inferred |
+| **What it does** | Demonstrative pronouns (`هذا`, `هذه`, `ذلك`, `تلك`) are retained and placed before the noun. Gender/number distinctions are simplified to a near/far distinction only. |
+| **Example** | `هذا الكتاب جميل جداً` → `هذا / كتاب / جميل / جداً` |
+
+---
+
+## 6. Phase Definitions & Boundaries
 
 ### PHASE 0: Project Setup ✅ → 🟡
 **Owner**: Any agent  
