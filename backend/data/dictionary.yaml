@@ -1,0 +1,1764 @@
+# ArSL Transcriber — Sign Dictionary
+# Generated: 2026-06-25
+# Phase: 3 (Dictionary Construction)
+# Total entries: 175
+# Coverage: All 5 test sentences + common vocabulary categories
+
+# =============================================================================
+# TEST SENTENCE WORDS (MUST-HAVE)
+# Sentence 1: ذهب الطالب إلى المدرسة أمس
+# Sentence 2: لم يذهب أحمد إلى المدرسة
+# Sentence 3: أين تعمل؟
+# Sentence 4: سأشتري ثلاثة كتب غداً
+# Sentence 5: هذا الكتاب جميل جداً
+# =============================================================================
+
+# --- Test Sentence Core Words ---
+
+- word: "ذهب"
+  sign_gloss: "ذهب"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "Common verb meaning 'to go'. Has standard sign in ALECSO dictionary."
+  regional_variants: []
+
+- word: "الطالب"
+  sign_gloss: "الطالب"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Student. Gender-neutral sign in ArSL (no separate form for طالبة). Preserved with definite article as per assignment spec."
+  regional_variants: []
+
+- word: "مدرسة"
+  sign_gloss: "مدرسة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "School. Standard ALECSO sign."
+  regional_variants: []
+
+- word: "أمس"
+  sign_gloss: "أمس"
+  category: "time"
+  verified: true
+  source_id: "S-04"
+  notes: "Yesterday. Time expression — should be fronted per R-02."
+  regional_variants: []
+
+- word: "أحمد"
+  sign_gloss: "fs(أحمد)"
+  category: "noun"
+  verified: true
+  source_id: "S-13"
+  notes: "Proper noun — fingerspelled unless signer has a name sign. Very common Arabic name."
+  regional_variants: []
+
+- word: "أين"
+  sign_gloss: "أين"
+  category: "question_word"
+  verified: true
+  source_id: "S-04"
+  notes: "Where. WH-question word — placed at end of clause per R-04."
+  regional_variants: []
+
+- word: "عمل"
+  sign_gloss: "عمل"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To work. Standard sign."
+  regional_variants: []
+
+- word: "شراء"
+  sign_gloss: "شراء"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To buy. Also used for forms اشترى/يشتري/سأشتري after lemmatization."
+  regional_variants: []
+
+- word: "ثلاثة"
+  sign_gloss: "ثلاثة"
+  category: "number"
+  verified: true
+  source_id: "S-04"
+  notes: "Three. Standard hand sign (3 fingers)."
+  regional_variants: []
+
+- word: "كتاب"
+  sign_gloss: "كتاب"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Book. Standard ALECSO sign. Used as singular form even after numbers (كتب → كتاب per R-11)."
+  regional_variants: []
+
+- word: "غداً"
+  sign_gloss: "غداً"
+  category: "time"
+  verified: true
+  source_id: "S-04"
+  notes: "Tomorrow. Time expression — fronted per R-02."
+  regional_variants: []
+
+- word: "هذا"
+  sign_gloss: "هذا"
+  category: "demonstrative"
+  verified: true
+  source_id: "S-04"
+  notes: "This (near demonstrative). Signed as a pointing gesture."
+  regional_variants: []
+
+- word: "جميل"
+  sign_gloss: "جميل"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Beautiful/handsome. Standard sign."
+  regional_variants: []
+
+- word: "جداً"
+  sign_gloss: "جداً"
+  category: "adverb"
+  verified: true
+  source_id: "S-04"
+  notes: "Very/much. Intensifier — may also be expressed through sign emphasis/repetition."
+  regional_variants: []
+
+- word: "لا"
+  sign_gloss: "لا"
+  category: "negation"
+  verified: true
+  source_id: "S-04"
+  notes: "No/not. Negation sign. All Arabic negation particles map to this sign per R-03."
+  regional_variants: []
+
+- word: "إلى"
+  sign_gloss: "[DROPPED]"
+  category: "preposition"
+  verified: true
+  source_id: "S-08"
+  notes: "Preposition 'to' — dropped in ArSL per R-06. Spatial meaning conveyed by sign movement."
+  regional_variants: []
+
+- word: "لم"
+  sign_gloss: "[NEGATION→لا]"
+  category: "negation"
+  verified: true
+  source_id: "S-08"
+  notes: "Past negation particle — replaced with negation sign لا per R-03."
+  regional_variants: []
+
+- word: "مستقبل"
+  sign_gloss: "مستقبل"
+  category: "time"
+  verified: false
+  source_id: "S-04"
+  notes: "Future. Used as a tense marker when سـ/سوف prefix is detected and no time adverb exists."
+  regional_variants: []
+
+# =============================================================================
+# FAMILY (عائلة)
+# =============================================================================
+
+- word: "أب"
+  sign_gloss: "أب"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Father."
+  regional_variants: []
+
+- word: "أم"
+  sign_gloss: "أم"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Mother."
+  regional_variants: []
+
+- word: "أخ"
+  sign_gloss: "أخ"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Brother."
+  regional_variants: []
+
+- word: "أخت"
+  sign_gloss: "أخت"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Sister."
+  regional_variants: []
+
+- word: "ابن"
+  sign_gloss: "ابن"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Son."
+  regional_variants: []
+
+- word: "ابنة"
+  sign_gloss: "ابنة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Daughter."
+  regional_variants: []
+
+- word: "عائلة"
+  sign_gloss: "عائلة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Family."
+  regional_variants: []
+
+- word: "زوج"
+  sign_gloss: "زوج"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Husband."
+  regional_variants: []
+
+- word: "زوجة"
+  sign_gloss: "زوجة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Wife."
+  regional_variants: []
+
+- word: "جد"
+  sign_gloss: "جد"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Grandfather."
+  regional_variants: []
+
+- word: "جدة"
+  sign_gloss: "جدة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Grandmother."
+  regional_variants: []
+
+- word: "طفل"
+  sign_gloss: "طفل"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Child."
+  regional_variants: []
+
+# =============================================================================
+# FOOD (طعام)
+# =============================================================================
+
+- word: "طعام"
+  sign_gloss: "طعام"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Food."
+  regional_variants: []
+
+- word: "ماء"
+  sign_gloss: "ماء"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Water."
+  regional_variants: []
+
+- word: "خبز"
+  sign_gloss: "خبز"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Bread."
+  regional_variants: []
+
+- word: "حليب"
+  sign_gloss: "حليب"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Milk."
+  regional_variants: []
+
+- word: "فاكهة"
+  sign_gloss: "فاكهة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Fruit."
+  regional_variants: []
+
+- word: "تفاحة"
+  sign_gloss: "تفاحة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Apple."
+  regional_variants: []
+
+- word: "أرز"
+  sign_gloss: "أرز"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Rice."
+  regional_variants: []
+
+- word: "لحم"
+  sign_gloss: "لحم"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Meat."
+  regional_variants: []
+
+- word: "سمك"
+  sign_gloss: "سمك"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Fish."
+  regional_variants: []
+
+- word: "شاي"
+  sign_gloss: "شاي"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Tea."
+  regional_variants: []
+
+- word: "قهوة"
+  sign_gloss: "قهوة"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Coffee."
+  regional_variants: []
+
+# =============================================================================
+# COLORS (ألوان)
+# =============================================================================
+
+- word: "أحمر"
+  sign_gloss: "أحمر"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Red."
+  regional_variants: []
+
+- word: "أزرق"
+  sign_gloss: "أزرق"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Blue."
+  regional_variants: []
+
+- word: "أخضر"
+  sign_gloss: "أخضر"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Green."
+  regional_variants: []
+
+- word: "أصفر"
+  sign_gloss: "أصفر"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Yellow."
+  regional_variants: []
+
+- word: "أبيض"
+  sign_gloss: "أبيض"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "White."
+  regional_variants: []
+
+- word: "أسود"
+  sign_gloss: "أسود"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Black."
+  regional_variants: []
+
+# =============================================================================
+# EMOTIONS (مشاعر)
+# =============================================================================
+
+- word: "سعيد"
+  sign_gloss: "سعيد"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Happy."
+  regional_variants: []
+
+- word: "حزين"
+  sign_gloss: "حزين"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Sad."
+  regional_variants: []
+
+- word: "غاضب"
+  sign_gloss: "غاضب"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Angry."
+  regional_variants: []
+
+- word: "خائف"
+  sign_gloss: "خائف"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Afraid/scared."
+  regional_variants: []
+
+- word: "متعب"
+  sign_gloss: "متعب"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Tired."
+  regional_variants: []
+
+- word: "جيد"
+  sign_gloss: "جيد"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Good."
+  regional_variants: []
+
+- word: "سيء"
+  sign_gloss: "سيء"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Bad."
+  regional_variants: []
+
+- word: "حب"
+  sign_gloss: "حب"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Love. Can be used as noun or verb."
+  regional_variants: []
+
+# =============================================================================
+# GREETINGS (تحيات)
+# =============================================================================
+
+- word: "مرحباً"
+  sign_gloss: "مرحباً"
+  category: "other"
+  verified: true
+  source_id: "S-04"
+  notes: "Hello/Welcome."
+  regional_variants: []
+
+- word: "سلام"
+  sign_gloss: "سلام"
+  category: "other"
+  verified: true
+  source_id: "S-04"
+  notes: "Peace/greeting. Used in السلام عليكم."
+  regional_variants: []
+
+- word: "شكراً"
+  sign_gloss: "شكراً"
+  category: "other"
+  verified: true
+  source_id: "S-04"
+  notes: "Thank you."
+  regional_variants: []
+
+- word: "عفواً"
+  sign_gloss: "عفواً"
+  category: "other"
+  verified: false
+  source_id: "S-04"
+  notes: "You're welcome / excuse me."
+  regional_variants: []
+
+- word: "نعم"
+  sign_gloss: "نعم"
+  category: "other"
+  verified: true
+  source_id: "S-04"
+  notes: "Yes."
+  regional_variants: []
+
+- word: "صباح"
+  sign_gloss: "صباح"
+  category: "time"
+  verified: true
+  source_id: "S-04"
+  notes: "Morning. Used in صباح الخير."
+  regional_variants: []
+
+- word: "مساء"
+  sign_gloss: "مساء"
+  category: "time"
+  verified: true
+  source_id: "S-04"
+  notes: "Evening. Used in مساء الخير."
+  regional_variants: []
+
+# =============================================================================
+# SCHOOL / EDUCATION (مدرسة / تعليم)
+# =============================================================================
+
+- word: "معلم"
+  sign_gloss: "معلم"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Teacher."
+  regional_variants: []
+
+- word: "قلم"
+  sign_gloss: "قلم"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Pen/pencil."
+  regional_variants: []
+
+- word: "ورقة"
+  sign_gloss: "ورقة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Paper."
+  regional_variants: []
+
+- word: "دراسة"
+  sign_gloss: "دراسة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Study/studies."
+  regional_variants: []
+
+- word: "امتحان"
+  sign_gloss: "امتحان"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Exam/test."
+  regional_variants: []
+
+- word: "جامعة"
+  sign_gloss: "جامعة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "University."
+  regional_variants: []
+
+- word: "فصل"
+  sign_gloss: "فصل"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Classroom/season."
+  regional_variants: []
+
+- word: "درس"
+  sign_gloss: "درس"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Lesson."
+  regional_variants: []
+
+- word: "واجب"
+  sign_gloss: "واجب"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Homework/duty."
+  regional_variants: []
+
+- word: "قراءة"
+  sign_gloss: "قراءة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Reading."
+  regional_variants: []
+
+- word: "كتابة"
+  sign_gloss: "كتابة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Writing."
+  regional_variants: []
+
+# =============================================================================
+# WORK (عمل)
+# =============================================================================
+
+- word: "مكتب"
+  sign_gloss: "مكتب"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Office/desk."
+  regional_variants: []
+
+- word: "شركة"
+  sign_gloss: "شركة"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Company."
+  regional_variants: []
+
+- word: "موظف"
+  sign_gloss: "موظف"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Employee."
+  regional_variants: []
+
+- word: "مدير"
+  sign_gloss: "مدير"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Manager/director."
+  regional_variants: []
+
+- word: "طبيب"
+  sign_gloss: "طبيب"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Doctor."
+  regional_variants: []
+
+- word: "مهندس"
+  sign_gloss: "مهندس"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Engineer."
+  regional_variants: []
+
+# =============================================================================
+# PLACES (أماكن)
+# =============================================================================
+
+- word: "بيت"
+  sign_gloss: "بيت"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "House/home."
+  regional_variants: []
+
+- word: "مستشفى"
+  sign_gloss: "مستشفى"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Hospital."
+  regional_variants: []
+
+- word: "مسجد"
+  sign_gloss: "مسجد"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Mosque."
+  regional_variants: []
+
+- word: "سوق"
+  sign_gloss: "سوق"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Market."
+  regional_variants: []
+
+- word: "شارع"
+  sign_gloss: "شارع"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Street."
+  regional_variants: []
+
+- word: "مدينة"
+  sign_gloss: "مدينة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "City."
+  regional_variants: []
+
+- word: "بلد"
+  sign_gloss: "بلد"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Country."
+  regional_variants: []
+
+- word: "مطعم"
+  sign_gloss: "مطعم"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Restaurant."
+  regional_variants: []
+
+- word: "مطار"
+  sign_gloss: "مطار"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Airport."
+  regional_variants: []
+
+- word: "حديقة"
+  sign_gloss: "حديقة"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Garden/park."
+  regional_variants: []
+
+# =============================================================================
+# COMMON ACTIONS / VERBS (أفعال)
+# =============================================================================
+
+- word: "أكل"
+  sign_gloss: "أكل"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To eat."
+  regional_variants: []
+
+- word: "شرب"
+  sign_gloss: "شرب"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To drink."
+  regional_variants: []
+
+- word: "نام"
+  sign_gloss: "نام"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To sleep."
+  regional_variants: []
+
+- word: "جلس"
+  sign_gloss: "جلس"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To sit."
+  regional_variants: []
+
+- word: "وقف"
+  sign_gloss: "وقف"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To stand."
+  regional_variants: []
+
+- word: "مشى"
+  sign_gloss: "مشى"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To walk."
+  regional_variants: []
+
+- word: "ركض"
+  sign_gloss: "ركض"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To run."
+  regional_variants: []
+
+- word: "رأى"
+  sign_gloss: "رأى"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To see."
+  regional_variants: []
+
+- word: "سمع"
+  sign_gloss: "سمع"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To hear."
+  regional_variants: []
+
+- word: "تكلم"
+  sign_gloss: "تكلم"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To speak/talk."
+  regional_variants: []
+
+- word: "كتب"
+  sign_gloss: "كتب"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To write."
+  regional_variants: []
+
+- word: "قرأ"
+  sign_gloss: "قرأ"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To read."
+  regional_variants: []
+
+- word: "فهم"
+  sign_gloss: "فهم"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To understand."
+  regional_variants: []
+
+- word: "عرف"
+  sign_gloss: "عرف"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To know."
+  regional_variants: []
+
+- word: "أراد"
+  sign_gloss: "أراد"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To want."
+  regional_variants: []
+
+- word: "أحب"
+  sign_gloss: "أحب"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To love/like."
+  regional_variants: []
+
+- word: "ساعد"
+  sign_gloss: "ساعد"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To help."
+  regional_variants: []
+
+- word: "لعب"
+  sign_gloss: "لعب"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To play."
+  regional_variants: []
+
+- word: "سافر"
+  sign_gloss: "سافر"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To travel."
+  regional_variants: []
+
+- word: "رجع"
+  sign_gloss: "رجع"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To return."
+  regional_variants: []
+
+- word: "فتح"
+  sign_gloss: "فتح"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To open."
+  regional_variants: []
+
+- word: "أغلق"
+  sign_gloss: "أغلق"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To close."
+  regional_variants: []
+
+- word: "أعطى"
+  sign_gloss: "أعطى"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To give."
+  regional_variants: []
+
+- word: "أخذ"
+  sign_gloss: "أخذ"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To take."
+  regional_variants: []
+
+- word: "وصل"
+  sign_gloss: "وصل"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To arrive."
+  regional_variants: []
+
+- word: "انتظر"
+  sign_gloss: "انتظر"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To wait."
+  regional_variants: []
+
+- word: "جاء"
+  sign_gloss: "جاء"
+  category: "verb"
+  verified: true
+  source_id: "S-04"
+  notes: "To come."
+  regional_variants: []
+
+- word: "بدأ"
+  sign_gloss: "بدأ"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To begin/start."
+  regional_variants: []
+
+- word: "انتهى"
+  sign_gloss: "انتهى"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To finish/end."
+  regional_variants: []
+
+# =============================================================================
+# TIME WORDS (كلمات زمنية)
+# =============================================================================
+
+- word: "اليوم"
+  sign_gloss: "اليوم"
+  category: "time"
+  verified: true
+  source_id: "S-04"
+  notes: "Today."
+  regional_variants: []
+
+- word: "الآن"
+  sign_gloss: "الآن"
+  category: "time"
+  verified: true
+  source_id: "S-04"
+  notes: "Now."
+  regional_variants: []
+
+- word: "دائماً"
+  sign_gloss: "دائماً"
+  category: "time"
+  verified: false
+  source_id: "S-04"
+  notes: "Always."
+  regional_variants: []
+
+- word: "أبداً"
+  sign_gloss: "أبداً"
+  category: "time"
+  verified: false
+  source_id: "S-04"
+  notes: "Never."
+  regional_variants: []
+
+- word: "قبل"
+  sign_gloss: "قبل"
+  category: "time"
+  verified: true
+  source_id: "S-04"
+  notes: "Before."
+  regional_variants: []
+
+- word: "بعد"
+  sign_gloss: "بعد"
+  category: "time"
+  verified: true
+  source_id: "S-04"
+  notes: "After."
+  regional_variants: []
+
+- word: "ساعة"
+  sign_gloss: "ساعة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Hour/clock."
+  regional_variants: []
+
+- word: "يوم"
+  sign_gloss: "يوم"
+  category: "time"
+  verified: true
+  source_id: "S-04"
+  notes: "Day."
+  regional_variants: []
+
+- word: "أسبوع"
+  sign_gloss: "أسبوع"
+  category: "time"
+  verified: true
+  source_id: "S-04"
+  notes: "Week."
+  regional_variants: []
+
+- word: "شهر"
+  sign_gloss: "شهر"
+  category: "time"
+  verified: true
+  source_id: "S-04"
+  notes: "Month."
+  regional_variants: []
+
+- word: "سنة"
+  sign_gloss: "سنة"
+  category: "time"
+  verified: true
+  source_id: "S-04"
+  notes: "Year."
+  regional_variants: []
+
+# =============================================================================
+# QUESTION WORDS (أدوات استفهام)
+# =============================================================================
+
+- word: "ماذا"
+  sign_gloss: "ماذا"
+  category: "question_word"
+  verified: true
+  source_id: "S-04"
+  notes: "What."
+  regional_variants: []
+
+- word: "من"
+  sign_gloss: "من"
+  category: "question_word"
+  verified: true
+  source_id: "S-04"
+  notes: "Who. Also used as preposition 'from' — context determines meaning."
+  regional_variants: []
+
+- word: "متى"
+  sign_gloss: "متى"
+  category: "question_word"
+  verified: true
+  source_id: "S-04"
+  notes: "When."
+  regional_variants: []
+
+- word: "كيف"
+  sign_gloss: "كيف"
+  category: "question_word"
+  verified: true
+  source_id: "S-04"
+  notes: "How."
+  regional_variants: []
+
+- word: "لماذا"
+  sign_gloss: "لماذا"
+  category: "question_word"
+  verified: true
+  source_id: "S-04"
+  notes: "Why."
+  regional_variants: []
+
+- word: "كم"
+  sign_gloss: "كم"
+  category: "question_word"
+  verified: true
+  source_id: "S-04"
+  notes: "How many/much."
+  regional_variants: []
+
+- word: "هل"
+  sign_gloss: "[DROPPED]"
+  category: "question_word"
+  verified: true
+  source_id: "S-08"
+  notes: "Yes/no question particle — dropped in ArSL per R-04b. Question indicated by non-manual markers."
+  regional_variants: []
+
+# =============================================================================
+# NUMBERS 1-10 (أرقام)
+# =============================================================================
+
+- word: "واحد"
+  sign_gloss: "واحد"
+  category: "number"
+  verified: true
+  source_id: "S-04"
+  notes: "One (1)."
+  regional_variants: []
+
+- word: "اثنان"
+  sign_gloss: "اثنان"
+  category: "number"
+  verified: true
+  source_id: "S-04"
+  notes: "Two (2)."
+  regional_variants: []
+
+- word: "أربعة"
+  sign_gloss: "أربعة"
+  category: "number"
+  verified: true
+  source_id: "S-04"
+  notes: "Four (4)."
+  regional_variants: []
+
+- word: "خمسة"
+  sign_gloss: "خمسة"
+  category: "number"
+  verified: true
+  source_id: "S-04"
+  notes: "Five (5)."
+  regional_variants: []
+
+- word: "ستة"
+  sign_gloss: "ستة"
+  category: "number"
+  verified: true
+  source_id: "S-04"
+  notes: "Six (6)."
+  regional_variants: []
+
+- word: "سبعة"
+  sign_gloss: "سبعة"
+  category: "number"
+  verified: true
+  source_id: "S-04"
+  notes: "Seven (7)."
+  regional_variants: []
+
+- word: "ثمانية"
+  sign_gloss: "ثمانية"
+  category: "number"
+  verified: true
+  source_id: "S-04"
+  notes: "Eight (8)."
+  regional_variants: []
+
+- word: "تسعة"
+  sign_gloss: "تسعة"
+  category: "number"
+  verified: true
+  source_id: "S-04"
+  notes: "Nine (9)."
+  regional_variants: []
+
+- word: "عشرة"
+  sign_gloss: "عشرة"
+  category: "number"
+  verified: true
+  source_id: "S-04"
+  notes: "Ten (10)."
+  regional_variants: []
+
+# =============================================================================
+# PRONOUNS (ضمائر)
+# =============================================================================
+
+- word: "أنا"
+  sign_gloss: "أنا"
+  category: "pronoun"
+  verified: true
+  source_id: "S-04"
+  notes: "I/me. Self-pointing gesture."
+  regional_variants: []
+
+- word: "أنت"
+  sign_gloss: "أنت"
+  category: "pronoun"
+  verified: true
+  source_id: "S-04"
+  notes: "You (singular). Forward-pointing gesture."
+  regional_variants: []
+
+- word: "هو"
+  sign_gloss: "هو"
+  category: "pronoun"
+  verified: true
+  source_id: "S-04"
+  notes: "He. Side-pointing gesture."
+  regional_variants: []
+
+- word: "هي"
+  sign_gloss: "هي"
+  category: "pronoun"
+  verified: true
+  source_id: "S-04"
+  notes: "She. Side-pointing gesture (may be same as هو in some variants)."
+  regional_variants: []
+
+- word: "نحن"
+  sign_gloss: "نحن"
+  category: "pronoun"
+  verified: true
+  source_id: "S-04"
+  notes: "We. Circular pointing gesture."
+  regional_variants: []
+
+- word: "هم"
+  sign_gloss: "هم"
+  category: "pronoun"
+  verified: true
+  source_id: "S-04"
+  notes: "They. Sweeping point gesture."
+  regional_variants: []
+
+# =============================================================================
+# PREPOSITIONS (حروف جر) — mostly dropped but documented
+# =============================================================================
+
+- word: "في"
+  sign_gloss: "[DROPPED]"
+  category: "preposition"
+  verified: true
+  source_id: "S-08"
+  notes: "In/at. Typically dropped in ArSL per R-06."
+  regional_variants: []
+
+- word: "من"
+  sign_gloss: "[DROPPED]"
+  category: "preposition"
+  verified: true
+  source_id: "S-08"
+  notes: "From. Dropped as preposition. Note: also a question word meaning 'who'."
+  regional_variants: []
+
+- word: "على"
+  sign_gloss: "فوق"
+  category: "preposition"
+  verified: false
+  source_id: "S-08"
+  notes: "On/upon. Sometimes dropped, sometimes signed as فوق (above) depending on context."
+  regional_variants: []
+
+- word: "عن"
+  sign_gloss: "[DROPPED]"
+  category: "preposition"
+  verified: true
+  source_id: "S-08"
+  notes: "About/from. Typically dropped in ArSL."
+  regional_variants: []
+
+- word: "مع"
+  sign_gloss: "مع"
+  category: "preposition"
+  verified: false
+  source_id: "S-04"
+  notes: "With. One of the few prepositions that may be retained in ArSL."
+  regional_variants: []
+
+# =============================================================================
+# CONNECTORS (روابط) — mostly dropped
+# =============================================================================
+
+- word: "و"
+  sign_gloss: "[DROPPED]"
+  category: "connector"
+  verified: true
+  source_id: "S-08"
+  notes: "And. Dropped per R-14. Sequential signing replaces conjunction."
+  regional_variants: []
+
+- word: "أو"
+  sign_gloss: "أو"
+  category: "connector"
+  verified: false
+  source_id: "S-08"
+  notes: "Or. May be retained as it carries semantic meaning (choice)."
+  regional_variants: []
+
+- word: "لكن"
+  sign_gloss: "لكن"
+  category: "connector"
+  verified: false
+  source_id: "S-08"
+  notes: "But. May have a dedicated contrast sign in some variants."
+  regional_variants: []
+
+# =============================================================================
+# ADDITIONAL COMMON ADJECTIVES
+# =============================================================================
+
+- word: "كبير"
+  sign_gloss: "كبير"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Big/large."
+  regional_variants: []
+
+- word: "صغير"
+  sign_gloss: "صغير"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Small/little."
+  regional_variants: []
+
+- word: "جديد"
+  sign_gloss: "جديد"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "New."
+  regional_variants: []
+
+- word: "قديم"
+  sign_gloss: "قديم"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Old (things, not people)."
+  regional_variants: []
+
+- word: "طويل"
+  sign_gloss: "طويل"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Tall/long."
+  regional_variants: []
+
+- word: "قصير"
+  sign_gloss: "قصير"
+  category: "adjective"
+  verified: true
+  source_id: "S-04"
+  notes: "Short."
+  regional_variants: []
+
+- word: "سريع"
+  sign_gloss: "سريع"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Fast."
+  regional_variants: []
+
+- word: "بطيء"
+  sign_gloss: "بطيء"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Slow."
+  regional_variants: []
+
+- word: "صحيح"
+  sign_gloss: "صحيح"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Correct/right."
+  regional_variants: []
+
+- word: "خطأ"
+  sign_gloss: "خطأ"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Wrong/mistake."
+  regional_variants: []
+
+# =============================================================================
+# ADDITIONAL COMMON NOUNS
+# =============================================================================
+
+- word: "رجل"
+  sign_gloss: "رجل"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Man."
+  regional_variants: []
+
+- word: "امرأة"
+  sign_gloss: "امرأة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Woman."
+  regional_variants: []
+
+- word: "ولد"
+  sign_gloss: "ولد"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Boy."
+  regional_variants: []
+
+- word: "بنت"
+  sign_gloss: "بنت"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Girl."
+  regional_variants: []
+
+- word: "صديق"
+  sign_gloss: "صديق"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Friend."
+  regional_variants: []
+
+- word: "سيارة"
+  sign_gloss: "سيارة"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Car."
+  regional_variants: []
+
+- word: "هاتف"
+  sign_gloss: "هاتف"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Phone/telephone."
+  regional_variants: []
+
+- word: "باب"
+  sign_gloss: "باب"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Door."
+  regional_variants: []
+
+- word: "نافذة"
+  sign_gloss: "نافذة"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Window."
+  regional_variants: []
+
+- word: "كرسي"
+  sign_gloss: "كرسي"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Chair."
+  regional_variants: []
+
+- word: "طاولة"
+  sign_gloss: "طاولة"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Table."
+  regional_variants: []
+
+- word: "صورة"
+  sign_gloss: "صورة"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Picture/photo."
+  regional_variants: []
+
+- word: "حاسوب"
+  sign_gloss: "حاسوب"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Computer."
+  regional_variants: []
+
+# =============================================================================
+# DEMONSTRATIVES
+# =============================================================================
+
+- word: "هذه"
+  sign_gloss: "هذا"
+  category: "demonstrative"
+  verified: true
+  source_id: "S-04"
+  notes: "This (feminine). Mapped to هذا in ArSL — no gender distinction in demonstrative signs."
+  regional_variants: []
+
+- word: "ذلك"
+  sign_gloss: "ذلك"
+  category: "demonstrative"
+  verified: true
+  source_id: "S-04"
+  notes: "That (far demonstrative)."
+  regional_variants: []
+
+- word: "تلك"
+  sign_gloss: "ذلك"
+  category: "demonstrative"
+  verified: true
+  source_id: "S-04"
+  notes: "That (feminine). Mapped to ذلك — no gender distinction."
+  regional_variants: []
+
+# =============================================================================
+# NEGATION PARTICLES
+# =============================================================================
+
+- word: "لن"
+  sign_gloss: "[NEGATION→لا]"
+  category: "negation"
+  verified: true
+  source_id: "S-08"
+  notes: "Future negation — replaced with لا sign per R-03."
+  regional_variants: []
+
+- word: "ليس"
+  sign_gloss: "[NEGATION→لا]"
+  category: "negation"
+  verified: true
+  source_id: "S-08"
+  notes: "Is not — replaced with لا sign per R-03."
+  regional_variants: []
+
+- word: "ما"
+  sign_gloss: "[NEGATION→لا]"
+  category: "negation"
+  verified: false
+  source_id: "S-08"
+  notes: "Negation/interrogative particle — context-dependent. When used for negation, maps to لا."
+  regional_variants: []
+
+# =============================================================================
+# ADDITIONAL VERBS FOR COVERAGE
+# =============================================================================
+
+- word: "دفع"
+  sign_gloss: "دفع"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To pay/push."
+  regional_variants: []
+
+- word: "نظر"
+  sign_gloss: "نظر"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To look."
+  regional_variants: []
+
+- word: "سأل"
+  sign_gloss: "سأل"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To ask."
+  regional_variants: []
+
+- word: "أجاب"
+  sign_gloss: "أجاب"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To answer."
+  regional_variants: []
+
+- word: "فكر"
+  sign_gloss: "فكر"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To think."
+  regional_variants: []
+
+- word: "تعلم"
+  sign_gloss: "تعلم"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To learn."
+  regional_variants: []
+
+- word: "علم"
+  sign_gloss: "علم"
+  category: "verb"
+  verified: false
+  source_id: "S-04"
+  notes: "To teach / to know."
+  regional_variants: []
+
+# =============================================================================
+# ADDITIONAL MISCELLANEOUS
+# =============================================================================
+
+- word: "شخص"
+  sign_gloss: "شخص"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Person."
+  regional_variants: []
+
+- word: "حياة"
+  sign_gloss: "حياة"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Life."
+  regional_variants: []
+
+- word: "موت"
+  sign_gloss: "موت"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Death."
+  regional_variants: []
+
+- word: "صحة"
+  sign_gloss: "صحة"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Health."
+  regional_variants: []
+
+- word: "مريض"
+  sign_gloss: "مريض"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Sick/patient."
+  regional_variants: []
+
+- word: "نظيف"
+  sign_gloss: "نظيف"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Clean."
+  regional_variants: []
+
+- word: "اسم"
+  sign_gloss: "اسم"
+  category: "noun"
+  verified: true
+  source_id: "S-04"
+  notes: "Name."
+  regional_variants: []
+
+- word: "عمر"
+  sign_gloss: "عمر"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Age."
+  regional_variants: []
+
+- word: "لون"
+  sign_gloss: "لون"
+  category: "noun"
+  verified: false
+  source_id: "S-04"
+  notes: "Color."
+  regional_variants: []
+
+- word: "ممكن"
+  sign_gloss: "ممكن"
+  category: "other"
+  verified: false
+  source_id: "S-04"
+  notes: "Possible/maybe."
+  regional_variants: []
+
+- word: "ضروري"
+  sign_gloss: "ضروري"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Necessary/important."
+  regional_variants: []
+
+- word: "كثير"
+  sign_gloss: "كثير"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Many/much."
+  regional_variants: []
+
+- word: "قليل"
+  sign_gloss: "قليل"
+  category: "adjective"
+  verified: false
+  source_id: "S-04"
+  notes: "Few/little."
+  regional_variants: []

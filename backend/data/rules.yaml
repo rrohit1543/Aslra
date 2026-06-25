@@ -1,0 +1,545 @@
+# ArSL Transcriber — Grammar Rules
+# Generated: 2026-06-25
+# Phase: 2 (Rule Extraction)
+# Total rules: 15 (covering 13 categories)
+
+# =============================================================================
+# WORD ORDER RULES
+# =============================================================================
+
+- id: "R-01"
+  name: "Topic-Comment Word Order"
+  category: "word_order"
+  description: "ArSL follows a Topic-Comment structure where the subject or topic is established first, followed by the comment (verb/action/description). This contrasts with Arabic's typical VSO order."
+  trigger: "Any declarative sentence. Applied after time fronting and other restructuring rules."
+  action: "Reorder the sentence to place the subject/topic first, then the object/location, then the verb. General pattern: S-O-V or Topic-Comment."
+  evidence_type: "explicit"
+  evidence:
+    - source_id: "S-08"
+      page_or_section: "Section: ترتيب عناصر الجملة"
+      quote_or_summary: "يميل تركيب الجملة الإشارية إلى وضع الفاعل أو الموضوع الأساسي أولاً، ثم الفعل أو الحالة. مثال: 'ذهب الولد إلى المدرسة' → 'ولد + مدرسة + ذهب'"
+    - source_id: "S-01"
+      page_or_section: "Section 3: Linguistic Features"
+      quote_or_summary: "ArSL uses Topic-Comment structure. The topic is established first, followed by the comment about that topic."
+    - source_id: "S-03"
+      page_or_section: "Section 3: Preprocessing Pipeline"
+      quote_or_summary: "Word order reordering is performed based on POS tags to convert Arabic VSO/SVO to ArSL topic-comment structure."
+    - source_id: "S-02"
+      page_or_section: "Chapter 4: Translation Approach"
+      quote_or_summary: "Direct word-for-word translation fails for ArSL. The system must restructure sentence order."
+  confidence: "high"
+  priority: 5
+  examples:
+    - input: "ذهب الطالب إلى المدرسة"
+      output: "طالب / مدرسة / ذهب"
+      explanation: "Step 1: Identify subject (الطالب), destination (المدرسة), verb (ذهب). Step 2: Drop article (ال) from الطالب and المدرسة. Step 3: Drop preposition (إلى). Step 4: Reorder to Topic-Comment: طالب + مدرسة + ذهب."
+    - input: "أكل أحمد التفاحة"
+      output: "أحمد / تفاحة / أكل"
+      explanation: "Step 1: Identify subject (أحمد), object (التفاحة), verb (أكل). Step 2: Drop article. Step 3: Reorder to S-O-V."
+  notes: "ArSL word order is flexible and context-dependent. Topic-Comment is the default but SVO is also acceptable. The exact order may vary by regional variant and discourse context. This rule represents the most commonly documented pattern."
+  requires_expert_review: true
+  review_questions:
+    - "Is SOV or SVO the more common order in everyday ArSL usage?"
+    - "Does the topic-comment structure apply equally across all regional variants?"
+    - "Are there sentence types where VSO (Arabic order) is retained in ArSL?"
+
+# =============================================================================
+# TIME EXPRESSION RULES
+# =============================================================================
+
+- id: "R-02"
+  name: "Time Expression Fronting"
+  category: "time"
+  description: "Temporal expressions (yesterday, tomorrow, now, last week, etc.) are moved to the beginning of the gloss sequence to establish the time frame before the action."
+  trigger: "Sentence contains a time expression (adverb of time) in any position."
+  action: "Move the time expression to the front of the gloss sequence, before the subject."
+  evidence_type: "explicit"
+  evidence:
+    - source_id: "S-08"
+      page_or_section: "Section: التركيب الزماني والمكاني"
+      quote_or_summary: "قد يتم تقديم 'الوقت' أو 'الموضوع' في بداية الجملة لتحديد سياق الحديث قبل ذكر الفاعل أو الفعل"
+    - source_id: "S-03"
+      page_or_section: "Section 3.2: Reordering Rules"
+      quote_or_summary: "Time markers are placed at the beginning of the sign sequence to set the temporal context."
+    - source_id: "S-02"
+      page_or_section: "Chapter 4"
+      quote_or_summary: "Temporal adverbs are fronted in the ArSL translation output."
+  confidence: "high"
+  priority: 1
+  examples:
+    - input: "ذهب الطالب إلى المدرسة أمس"
+      output: "أمس / طالب / مدرسة / ذهب"
+      explanation: "Step 1: Identify time expression (أمس = yesterday). Step 2: Move أمس to front. Step 3: Apply word order rule for remaining: طالب + مدرسة + ذهب."
+    - input: "سأشتري ثلاثة كتب غداً"
+      output: "غداً / ثلاثة / كتاب / شراء"
+      explanation: "Step 1: Identify time expression (غداً = tomorrow). Step 2: Move to front. Step 3: Extract future tense from سأشتري → شراء. Step 4: Reorder remaining elements."
+  notes: "Time fronting is one of the most well-documented ArSL rules. It is consistent across most sign language typology research. When both time and topic compete for the front position, time typically comes first."
+  requires_expert_review: false
+  review_questions:
+    - "When multiple time expressions exist in a sentence, what is the ordering?"
+
+# =============================================================================
+# NEGATION RULES
+# =============================================================================
+
+- id: "R-03"
+  name: "Negation Handling"
+  category: "negation"
+  description: "Negation in ArSL is expressed by adding a negation sign (typically a headshake or a specific hand sign) after the verb, or at the end of the clause. Arabic negation particles (لا, لم, لن, ما, ليس) are replaced with a single negation marker."
+  trigger: "Sentence contains an Arabic negation particle (لا, لم, لن, ما, ليس, لست, etc.)."
+  action: "Remove the Arabic negation particle. Add a negation sign gloss (لا/NEG) at the end of the verb phrase or at the end of the clause. Non-manual marker (headshake) is implied."
+  evidence_type: "inferred"
+  evidence:
+    - source_id: "S-08"
+      page_or_section: "Section: الاستفهام والنفي"
+      quote_or_summary: "الجملة المنفية تعتمد على تعبيرات الوجه وإضافة إشارة النفي"
+    - source_id: "S-01"
+      page_or_section: "Section 3"
+      quote_or_summary: "Non-manual markers including headshake are used for negation in ArSL, similar to other sign languages."
+    - source_id: "S-02"
+      page_or_section: "Chapter 4: Negation handling"
+      quote_or_summary: "Negation particles in Arabic are replaced with negation signs in the ArSL output."
+  confidence: "medium"
+  priority: 2
+  examples:
+    - input: "لم يذهب أحمد إلى المدرسة"
+      output: "أحمد / مدرسة / ذهب / لا"
+      explanation: "Step 1: Remove negation particle (لم). Step 2: Extract verb base (يذهب → ذهب). Step 3: Reorder to topic-comment: أحمد + مدرسة + ذهب. Step 4: Add negation sign (لا) at end."
+    - input: "لا أريد"
+      output: "أريد / لا"
+      explanation: "Step 1: Remove لا. Step 2: Keep verb. Step 3: Add negation at end."
+  notes: "The exact position of the negation sign (post-verb vs. clause-final) may vary by regional variant. Some signers place it immediately after the verb, others at the very end. Headshake is the primary non-manual negation marker. Multiple Arabic negation particles (لم, لن, لا, ما, ليس) all map to a single negation sign in ArSL."
+  requires_expert_review: true
+  review_questions:
+    - "Is the negation sign placed immediately after the verb or at the end of the clause?"
+    - "Do different Arabic negation particles (لم vs لا vs لن) have different ArSL representations?"
+    - "Is headshake sufficient for negation without a manual sign?"
+
+# =============================================================================
+# QUESTION RULES
+# =============================================================================
+
+- id: "R-04"
+  name: "WH-Question Formation"
+  category: "question"
+  description: "WH-question words (أين, ماذا, من, متى, كيف, لماذا, كم) are placed at the end of the gloss sequence in ArSL. Non-manual markers (raised eyebrows for WH, furrowed brows for yes/no) accompany the question."
+  trigger: "Sentence contains a WH-question word or ends with a question mark."
+  action: "Move the WH-question word to the end of the gloss sequence. Mark with non-manual marker notation."
+  evidence_type: "inferred"
+  evidence:
+    - source_id: "S-08"
+      page_or_section: "Section: الاستفهام"
+      quote_or_summary: "غالباً ما تُستخدم إيماءات الوجه (مثل رفع الحاجبين أو حركة الرأس) كعلامة ترقيم إشارية توضع في بداية الجملة أو نهايتها لتحديد صيغة السؤال"
+    - source_id: "S-01"
+      page_or_section: "Section 3: Syntax"
+      quote_or_summary: "Question formation in sign languages typically involves non-manual markers and specific positioning of question words."
+  confidence: "medium"
+  priority: 3
+  examples:
+    - input: "أين تعمل؟"
+      output: "عمل / أين"
+      explanation: "Step 1: Identify WH-word (أين = where). Step 2: Extract verb (تعمل → عمل). Step 3: Place WH-word at end. Non-manual: furrowed eyebrows."
+    - input: "ماذا تريد؟"
+      output: "تريد / ماذا"
+      explanation: "Step 1: Identify WH-word (ماذا = what). Step 2: Move to end."
+    - input: "متى ستسافر؟"
+      output: "سفر / متى"
+      explanation: "Step 1: Identify WH-word (متى = when). Step 2: Extract verb base (سفر). Step 3: WH-word at end."
+  notes: "Some sources indicate WH-words can appear at both the beginning AND end of the clause (WH-doubling). The end position is more commonly documented. Yes/no questions use different non-manual markers (raised eyebrows) vs. WH-questions (furrowed brows). This distinction is important but cannot be represented in gloss text alone."
+  requires_expert_review: true
+  review_questions:
+    - "Is WH-word doubling (appearing both at start and end) common in ArSL?"
+    - "Is the question word always clause-final, or are there exceptions?"
+    - "Do all regional variants handle WH-questions the same way?"
+
+- id: "R-04b"
+  name: "Yes/No Question Formation"
+  category: "question"
+  description: "Yes/No questions in ArSL maintain the same word order as declarative sentences but are marked by non-manual signals (raised eyebrows, forward head tilt). The particle هل is dropped."
+  trigger: "Sentence contains yes/no question marker (هل) or is a declarative sentence with question mark."
+  action: "Remove هل if present. Keep declarative word order. Add non-manual marker notation."
+  evidence_type: "inferred"
+  evidence:
+    - source_id: "S-08"
+      page_or_section: "Section: الاستفهام"
+      quote_or_summary: "Raised eyebrows used for yes/no question indication."
+    - source_id: "S-01"
+      page_or_section: "Section 3"
+      quote_or_summary: "Yes/no questions in sign languages are marked primarily through non-manual features rather than word order changes."
+  confidence: "medium"
+  priority: 3
+  examples:
+    - input: "هل أنت طالب؟"
+      output: "أنت / طالب [+NMM:سؤال]"
+      explanation: "Step 1: Remove هل. Step 2: Keep word order. Step 3: Mark as question via non-manual markers."
+  notes: "Yes/no questions are primarily distinguished from statements through non-manual markers (raised eyebrows, forward lean), which cannot be fully captured in text gloss."
+  requires_expert_review: true
+  review_questions:
+    - "Are there any manual signs used for yes/no question marking in addition to non-manual markers?"
+
+# =============================================================================
+# PRONOUN RULES
+# =============================================================================
+
+- id: "R-05"
+  name: "Pronoun Simplification"
+  category: "pronoun"
+  description: "Arabic distinguishes many pronoun forms (gender, number, case). ArSL uses a simplified pointing system. All Arabic pronoun variants for the same person are mapped to a single pointing sign."
+  trigger: "Token is identified as a pronoun (أنا, أنت, أنتِ, هو, هي, نحن, أنتم, هم, etc.)."
+  action: "Replace Arabic pronoun with the base pronoun sign. ArSL uses pointing (index finger) to indicate person: self-point for first person, forward-point for second person, side-point for third person."
+  evidence_type: "inferred"
+  evidence:
+    - source_id: "S-01"
+      page_or_section: "Section 3: Morphology"
+      quote_or_summary: "ArSL does not use the same agreement markers (singular/plural/dual) found in spoken Arabic. Pronouns are typically expressed through pointing."
+    - source_id: "S-06"
+      page_or_section: "Morphology section"
+      quote_or_summary: "Sign languages use spatial indexing (pointing) for pronominal reference rather than distinct lexical forms."
+  confidence: "medium"
+  priority: 4
+  examples:
+    - input: "هو ذهب"
+      output: "هو / ذهب"
+      explanation: "Pronoun هو is signed as a point to the side (third person). Verb follows."
+    - input: "أنا أحب القراءة"
+      output: "أنا / قراءة / حب"
+      explanation: "Self-point (أنا), then topic (قراءة), then verb (حب)."
+  notes: "Arabic verb conjugation already encodes the subject pronoun. When a sentence has an explicit pronoun AND a conjugated verb, the pronoun sign may be optional if the verb's subject is clear from context. Dual forms (أنتما, هما) are particularly rare in ArSL — typically represented as pointing to two people."
+  requires_expert_review: true
+  review_questions:
+    - "When Arabic uses embedded pronouns in verb conjugation (e.g., ذهبت), should we insert an explicit pronoun sign?"
+    - "How are dual pronouns handled in ArSL?"
+
+# =============================================================================
+# PREPOSITION RULES
+# =============================================================================
+
+- id: "R-06"
+  name: "Preposition Dropping and Spatial Encoding"
+  category: "preposition"
+  description: "Many Arabic prepositions (إلى, في, من, على, بـ, لـ, عن) are dropped in ArSL because spatial relationships are expressed through sign movement, location, and direction rather than separate preposition signs."
+  trigger: "Token is identified as a preposition."
+  action: "Remove the preposition from the gloss sequence. The spatial meaning is conveyed through the movement/direction of surrounding signs."
+  evidence_type: "explicit"
+  evidence:
+    - source_id: "S-08"
+      page_or_section: "Section: ترتيب عناصر الجملة"
+      quote_or_summary: "في كثير من الأحيان، يتم اختصار أو حذف حروف الجر، وحروف العطف، وأدوات التعريف التي لا تؤثر على المعنى الجوهري للجملة"
+    - source_id: "S-03"
+      page_or_section: "Section 3: Stop word removal"
+      quote_or_summary: "Prepositions are among the function words removed during preprocessing for ArSL translation."
+    - source_id: "S-02"
+      page_or_section: "Chapter 4"
+      quote_or_summary: "Arabic prepositions do not have direct sign equivalents; spatial information is encoded in sign movement."
+  confidence: "high"
+  priority: 2
+  examples:
+    - input: "ذهب إلى المدرسة"
+      output: "مدرسة / ذهب"
+      explanation: "Preposition إلى is dropped. Direction is implied by the movement of the sign for ذهب."
+    - input: "الكتاب على الطاولة"
+      output: "طاولة / كتاب / فوق"
+      explanation: "Preposition على is dropped as a word but the spatial relationship is shown through sign placement (signing 'book' above 'table')."
+  notes: "Not all prepositions are always dropped. Some signers retain preposition-like signs for emphasis or clarity. The rule is a strong tendency, not an absolute. Spatial prepositions (على, تحت, فوق) may have dedicated signs in some contexts."
+  requires_expert_review: true
+  review_questions:
+    - "Which specific prepositions have dedicated ArSL signs vs. which are always dropped?"
+    - "How does the signer convey 'from' vs. 'to' without preposition signs?"
+
+# =============================================================================
+# ARTICLE RULES
+# =============================================================================
+
+- id: "R-07"
+  name: "Definite Article (الـ) Dropping"
+  category: "article"
+  description: "The Arabic definite article (الـ) is stripped from all words. ArSL does not use articles — definiteness is understood from context. The ALECSO unified dictionary lists all words in their indefinite/lemma form."
+  trigger: "Any word beginning with the definite article الـ."
+  action: "Remove the الـ prefix from the word. Use the bare noun/adjective form for gloss lookup."
+  evidence_type: "explicit"
+  evidence:
+    - source_id: "S-08"
+      page_or_section: "Section: ترتيب عناصر الجملة"
+      quote_or_summary: "يتم اختصار أو حذف ... أدوات التعريف التي لا تؤثر على المعنى الجوهري للجملة"
+    - source_id: "S-04"
+      page_or_section: "Dictionary format"
+      quote_or_summary: "All entries in the ALECSO dictionary are listed in base/lemma form without the definite article."
+    - source_id: "S-03"
+      page_or_section: "Section 3.1: Normalization"
+      quote_or_summary: "Definite articles are removed during the preprocessing step before gloss lookup."
+    - source_id: "S-10"
+      page_or_section: "Section: Linguistic Features"
+      quote_or_summary: "Sign languages generally do not use articles (the, a). Definiteness is conveyed through context."
+  confidence: "high"
+  priority: 1
+  examples:
+    - input: "الكتاب"
+      output: "كتاب"
+      explanation: "Remove الـ prefix → كتاب."
+    - input: "المدرسة"
+      output: "مدرسة"
+      explanation: "Remove الـ prefix → مدرسة."
+    - input: "ذهب الطالب إلى المدرسة"
+      output: "(الطالب → طالب, المدرسة → مدرسة)"
+      explanation: "Both definite articles are stripped before further processing."
+  notes: "This is one of the most consistent and well-documented rules across all sources. It applies universally regardless of regional variant. The solar/lunar letter distinction (الشمسية/القمرية) does not affect this rule — الـ is always removed."
+  requires_expert_review: false
+  review_questions: []
+
+# =============================================================================
+# VERB TENSE RULES
+# =============================================================================
+
+- id: "R-08"
+  name: "Verb Tense Simplification"
+  category: "tense"
+  description: "Arabic encodes tense through verb conjugation and prefixes (سـ for future, لم for past negation, etc.). In ArSL, the verb is typically signed in its base/root form, and tense is conveyed by a separate time marker sign or by a time expression already fronted in the sentence."
+  trigger: "Verb token has tense/conjugation markers (past conjugation, present prefix يـ/تـ/أـ/نـ, future prefix سـ/سوف)."
+  action: "Extract the verb root/lemma. If future marker (سـ/سوف) is present, add a future time sign if no explicit time expression already exists. Past tense is typically conveyed by the time expression (e.g., أمس) rather than a separate tense marker."
+  evidence_type: "inferred"
+  evidence:
+    - source_id: "S-03"
+      page_or_section: "Section 3: Morphological Analysis"
+      quote_or_summary: "Verb stems are extracted through morphological analysis. Tense information is handled separately from the verb sign."
+    - source_id: "S-01"
+      page_or_section: "Section 3: Morphology"
+      quote_or_summary: "ArSL does not use the same tense, aspect, or agreement markers found in spoken Arabic."
+    - source_id: "S-07"
+      page_or_section: "System Design"
+      quote_or_summary: "Verbs are reduced to base form. Tense context is established by time expressions."
+  confidence: "medium"
+  priority: 3
+  examples:
+    - input: "سأشتري"
+      output: "مستقبل / شراء"
+      explanation: "Step 1: Identify future prefix سـ. Step 2: Extract verb root شراء (or اشترى → شراء). Step 3: Add future time marker if no time adverb exists."
+    - input: "ذهبت أمس"
+      output: "أمس / ذهب"
+      explanation: "Step 1: Extract verb root ذهب from ذهبت. Step 2: Time expression أمس already provides past context, so no additional tense marker needed."
+  notes: "The exact mechanism for tense marking in ArSL is debated. Some sources suggest dedicated 'PAST', 'FUTURE' signs exist, while others say time expressions handle all tense marking. In our implementation, we add an explicit tense marker only when no time adverb is present in the sentence."
+  requires_expert_review: true
+  review_questions:
+    - "Are there dedicated PAST/PRESENT/FUTURE signs in ArSL, or is tense always contextual?"
+    - "When a sentence has both a time adverb and verb conjugation, is the time marker redundant?"
+
+# =============================================================================
+# ADJECTIVE RULES
+# =============================================================================
+
+- id: "R-09"
+  name: "Adjective Placement After Noun"
+  category: "adjective"
+  description: "In ArSL, adjectives follow the noun they modify, similar to Arabic. However, the adjective is signed in its base form (masculine singular) without agreement markers."
+  trigger: "Token sequence contains a noun followed by an adjective."
+  action: "Keep the noun-adjective order. Remove any gender/number agreement suffixes from the adjective. Sign the adjective in its base form."
+  evidence_type: "inferred"
+  evidence:
+    - source_id: "S-08"
+      page_or_section: "Section: بنية الجملة"
+      quote_or_summary: "Adjectives and descriptors follow the noun in ArSL sentence structure."
+    - source_id: "S-03"
+      page_or_section: "Section 3: POS-based reordering"
+      quote_or_summary: "Noun-adjective pairs are kept together with the adjective following the noun."
+    - source_id: "S-12"
+      page_or_section: "Basic sentence construction"
+      quote_or_summary: "Descriptive signs (adjectives) are placed after the thing being described."
+  confidence: "medium"
+  priority: 6
+  examples:
+    - input: "هذا الكتاب جميل جداً"
+      output: "هذا / كتاب / جميل / جداً"
+      explanation: "Step 1: Demonstrative (هذا) stays at front. Step 2: Drop article from الكتاب → كتاب. Step 3: Adjective (جميل) follows noun. Step 4: Intensifier (جداً) follows adjective."
+    - input: "البيت الكبير"
+      output: "بيت / كبير"
+      explanation: "Drop article. Keep noun-adjective order."
+  notes: "This mirrors Arabic word order (noun-adjective), so minimal restructuring is needed. The key transformation is removing agreement morphology from the adjective."
+  requires_expert_review: false
+  review_questions:
+    - "Are there cases where the adjective precedes the noun in ArSL for emphasis?"
+
+# =============================================================================
+# NOUN PHRASE RULES
+# =============================================================================
+
+- id: "R-10"
+  name: "Noun Phrase Simplification"
+  category: "noun_phrase"
+  description: "Complex Arabic noun phrases (with possessives, demonstratives, multiple modifiers) are simplified in ArSL. Demonstratives come first, then the noun, then possessives, then adjectives."
+  trigger: "Token sequence forms a complex noun phrase with demonstrative, possessive, or multiple modifiers."
+  action: "Reorder to: Demonstrative + Noun + Possessive + Adjective. Drop articles and case markers."
+  evidence_type: "inferred"
+  evidence:
+    - source_id: "S-08"
+      page_or_section: "Section: بنية الجملة"
+      quote_or_summary: "Topic-comment structure applies within noun phrases as well — the main noun is established first."
+    - source_id: "S-03"
+      page_or_section: "Section 3"
+      quote_or_summary: "Noun phrases are simplified through morphological analysis and POS-based restructuring."
+  confidence: "low"
+  priority: 6
+  examples:
+    - input: "هذا الكتاب جميل"
+      output: "هذا / كتاب / جميل"
+      explanation: "Demonstrative (هذا) + Noun (كتاب, article dropped) + Adjective (جميل)."
+    - input: "كتاب الولد الجديد"
+      output: "ولد / كتاب / جديد"
+      explanation: "Possessor (ولد) + Possessed (كتاب) + Adjective (جديد). Possessive construction reverses order to put possessor first."
+  notes: "This rule has low confidence because detailed noun phrase structure in ArSL is poorly documented. The examples are inferred from general sign language typology and the few Arabic-specific sources available."
+  requires_expert_review: true
+  review_questions:
+    - "What is the correct order for demonstrative + possessive + adjective combinations?"
+    - "How are possessive constructions signed in ArSL?"
+
+# =============================================================================
+# NUMERICAL EXPRESSION RULES
+# =============================================================================
+
+- id: "R-11"
+  name: "Numerical Expression: Number Before Noun"
+  category: "number"
+  description: "In ArSL, numbers precede the noun they quantify. The noun is typically signed in singular form regardless of the number."
+  trigger: "Token sequence contains a number followed by or preceding a noun."
+  action: "Place the number sign before the noun sign. Use the singular form of the noun."
+  evidence_type: "inferred"
+  evidence:
+    - source_id: "S-03"
+      page_or_section: "Section 3: Number handling"
+      quote_or_summary: "Numerical expressions are restructured with the number preceding the noun in the sign output."
+    - source_id: "S-12"
+      page_or_section: "Numbers section"
+      quote_or_summary: "Number signs are taught alongside nouns with number-first ordering."
+  confidence: "medium"
+  priority: 4
+  examples:
+    - input: "ثلاثة كتب"
+      output: "ثلاثة / كتاب"
+      explanation: "Number (ثلاثة) precedes noun (كتاب, in singular form). Arabic plural كتب → singular كتاب."
+    - input: "خمسة طلاب"
+      output: "خمسة / طالب"
+      explanation: "Number first, noun in singular: طلاب → طالب."
+  notes: "Arabic has complex number-noun agreement rules (inverse agreement, case changes). ArSL simplifies this drastically: number + singular noun. Numbers 1-10 have specific hand signs."
+  requires_expert_review: true
+  review_questions:
+    - "Is the noun always in singular form after a number, or are there exceptions?"
+    - "How are ordinal numbers (first, second) handled?"
+
+# =============================================================================
+# NON-MANUAL MARKER RULES
+# =============================================================================
+
+- id: "R-12"
+  name: "Non-Manual Markers Annotation"
+  category: "non_manual"
+  description: "Non-manual markers (facial expressions, head movements, body shifts) are essential grammatical components of ArSL. They cannot be fully represented in text gloss but should be annotated when relevant."
+  trigger: "Sentence contains a question, negation, conditional, or emotional emphasis."
+  action: "Add a non-manual marker annotation tag to the gloss sequence: [+NMM:type] where type can be: سؤال (question), نفي (negation), تعجب (exclamation), شرط (conditional)."
+  evidence_type: "explicit"
+  evidence:
+    - source_id: "S-01"
+      page_or_section: "Section 3"
+      quote_or_summary: "Non-manual markers are essential for conveying meaning, grammar, and emotion in ArSL."
+    - source_id: "S-08"
+      page_or_section: "Section: دور الإيماءات وتعبيرات الوجه"
+      quote_or_summary: "تعد تعبيرات الوجه وحركة الجسم بمثابة 'التشكيل' في اللغة العربية المنطوقة؛ فهي التي تعطي للجملة دلالتها النحوية أو الشعورية"
+    - source_id: "S-10"
+      page_or_section: "Linguistic Features"
+      quote_or_summary: "Facial expressions and body movements are not additive but essential for defining syntax in sign languages."
+  confidence: "high"
+  priority: 10
+  examples:
+    - input: "أين تعمل؟"
+      output: "عمل / أين [+NMM:سؤال]"
+      explanation: "Add question NMM annotation. WH-questions use furrowed eyebrows."
+    - input: "لم يذهب أحمد"
+      output: "أحمد / ذهب / لا [+NMM:نفي]"
+      explanation: "Add negation NMM annotation. Negation uses headshake."
+  notes: "This rule adds metadata/annotations rather than changing the gloss sequence itself. In a full sign language system, NMMs would be animated on an avatar. In our text-based prototype, we can only note their presence."
+  requires_expert_review: false
+  review_questions: []
+
+# =============================================================================
+# FALLBACK RULES
+# =============================================================================
+
+- id: "R-13"
+  name: "Fingerspelling Fallback for Unknown Words"
+  category: "fallback"
+  description: "When a word is not found in the sign dictionary, it should be fingerspelled using the Arabic manual alphabet. This is standard practice for proper nouns, technical terms, and new vocabulary."
+  trigger: "Word lookup in dictionary returns no match AND word is not a function word (preposition, article, etc.)."
+  action: "Mark the word for fingerspelling by wrapping it in fs() notation: fs(word). The frontend can display this distinctly."
+  evidence_type: "explicit"
+  evidence:
+    - source_id: "S-04"
+      page_or_section: "Introduction"
+      quote_or_summary: "The dictionary covers approximately 3200 signs. Words not in the dictionary are fingerspelled using the Arabic manual alphabet."
+    - source_id: "S-03"
+      page_or_section: "Section 3: Unknown word handling"
+      quote_or_summary: "Words not found in the sign lexicon are handled through fingerspelling."
+    - source_id: "S-10"
+      page_or_section: "Survey findings"
+      quote_or_summary: "Fingerspelling is used for proper nouns, technical terms, and words without established signs."
+  confidence: "high"
+  priority: 99
+  examples:
+    - input: "ذهب محمد إلى الجامعة"
+      output: "fs(محمد) / جامعة / ذهب"
+      explanation: "If محمد is not in the dictionary, it is fingerspelled. جامعة and ذهب are looked up normally."
+  notes: "Fingerspelling is slow and should be minimized. Common proper nouns (country names, major cities, well-known names) may have established signs. The system should attempt dictionary lookup first, then fall back to fingerspelling."
+  requires_expert_review: false
+  review_questions: []
+
+# =============================================================================
+# ADDITIONAL RULES
+# =============================================================================
+
+- id: "R-14"
+  name: "Conjunction Dropping"
+  category: "preposition"
+  description: "Arabic conjunctions and connectors (و, ف, ثم, أو, لكن) are typically dropped in ArSL. Sequential actions are shown through temporal sequencing of signs rather than explicit connectors."
+  trigger: "Token is identified as a conjunction (و, ف, ثم, أو, لكن, بل)."
+  action: "Remove the conjunction from the gloss sequence. If the conjunction connects two clauses, treat each clause independently."
+  evidence_type: "inferred"
+  evidence:
+    - source_id: "S-08"
+      page_or_section: "Section: حذف الأدوات"
+      quote_or_summary: "يتم اختصار أو حذف حروف الجر، وحروف العطف، وأدوات التعريف"
+    - source_id: "S-03"
+      page_or_section: "Section 3: Stop word removal"
+      quote_or_summary: "Conjunctions are among the function words removed during preprocessing."
+  confidence: "medium"
+  priority: 2
+  examples:
+    - input: "أكل وشرب"
+      output: "أكل / شرب"
+      explanation: "Conjunction و is dropped. The two actions are signed sequentially."
+  notes: "The conjunction 'أو' (or) may sometimes be retained as it carries important semantic meaning (choice between alternatives). Context matters."
+  requires_expert_review: true
+  review_questions:
+    - "Is the conjunction أو (or) always dropped, or is it sometimes signed?"
+    - "How is 'but' (لكن) expressed in ArSL — is there a specific contrast marker?"
+
+- id: "R-15"
+  name: "Demonstrative Retention"
+  category: "noun_phrase"
+  description: "Arabic demonstrative pronouns (هذا, هذه, ذلك, تلك, هؤلاء) are retained in ArSL and placed before the noun they modify. Gender/number distinctions are simplified."
+  trigger: "Token is identified as a demonstrative pronoun."
+  action: "Keep the demonstrative in the gloss sequence. Place it before the noun. Simplify to base form if needed (هذه → هذا for near, تلك → ذلك for far)."
+  evidence_type: "inferred"
+  evidence:
+    - source_id: "S-08"
+      page_or_section: "Section: بنية الجملة"
+      quote_or_summary: "Demonstrative references are established through pointing and maintained in the sign sequence."
+    - source_id: "S-12"
+      page_or_section: "Basic vocabulary"
+      quote_or_summary: "Demonstratives are among the basic sign vocabulary taught to beginners."
+  confidence: "medium"
+  priority: 5
+  examples:
+    - input: "هذا الكتاب جميل جداً"
+      output: "هذا / كتاب / جميل / جداً"
+      explanation: "Demonstrative (هذا) retained before noun (كتاب). Article dropped. Adjective follows."
+  notes: "ArSL likely simplifies the Arabic demonstrative system (which has masculine/feminine/dual/plural forms) to near/far distinction only, signed through pointing."
+  requires_expert_review: true
+  review_questions:
+    - "Does ArSL distinguish masculine/feminine demonstratives, or only near/far?"
+    - "How are plural demonstratives (هؤلاء, أولئك) signed?"

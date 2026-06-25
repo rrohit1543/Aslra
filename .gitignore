@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+.venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Distribution
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Logs
+*.log
+
+# Project specific temporary output files
+debug.txt
+debug_dict.txt
+output.txt
+output_all.txt
+
+# Agent workspace customizations
+.agents/

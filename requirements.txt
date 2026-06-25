@@ -1,0 +1,6 @@
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+pyyaml>=6.0
+pydantic>=2.0
+# camel-tools - install separately: pip install camel-tools
+# CAMeL Tools may require additional setup, see README.md

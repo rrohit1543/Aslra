@@ -1,0 +1,238 @@
+# ArSL Transcriber — Source Inventory
+# Generated: 2026-06-25
+# Phase: 1 (Source Discovery)
+# Total sources: 14
+
+- id: "S-01"
+  title: "Arabic Sign Language: A Perspective"
+  language: "en"
+  url: "https://academic.oup.com/jdsde/article/10/2/212/372"  # Journal of Deaf Studies and Deaf Education
+  acquisition_method: "web"
+  type: "academic"
+  credibility: "high"
+  credibility_reason: "Peer-reviewed journal article in Journal of Deaf Studies and Deaf Education (Oxford). Foundational paper on ArSL linguistics by Mahmoud A. Abdel-Fattah. Frequently cited in subsequent ArSL literature."
+  rules_supported:
+    - "R-01"
+    - "R-05"
+    - "R-07"
+    - "R-12"
+  limitations: "Provides overview rather than exhaustive grammatical rules. Focuses on contrastive analysis rather than prescriptive grammar. Data from 2005 may not reflect recent developments."
+  year: 2005
+  author: "Mahmoud A. Abdel-Fattah"
+
+- id: "S-02"
+  title: "An Arabic Text-to-Arabic Sign Language Translation System"
+  language: "en"
+  url: "https://eprints.soton.ac.uk/272580/"
+  acquisition_method: "web"
+  type: "academic"
+  credibility: "high"
+  credibility_reason: "PhD research at University of Southampton. Developed bilingual Arabic-ArSL corpus. Published in ACL and peer-reviewed venues. Addresses translation rules explicitly."
+  rules_supported:
+    - "R-01"
+    - "R-02"
+    - "R-03"
+    - "R-06"
+    - "R-07"
+    - "R-08"
+  limitations: "System was domain-specific (prayer jurisprudence). Translation rules may not generalize to all domains. Corpus-based rather than purely rule-based."
+  year: 2011
+  author: "Abdulaziz Almohimeed, Mike Wald, Robert Damper"
+
+- id: "S-03"
+  title: "Automatic translation of Arabic text to Arabic sign language"
+  language: "en"
+  url: "https://link.springer.com/article/10.1007/s10209-018-0622-8"
+  acquisition_method: "web"
+  type: "academic"
+  credibility: "high"
+  credibility_reason: "Published in Universal Access in the Information Society (Springer). Describes complete pipeline including morphological analysis, POS tagging, and reordering rules for ArSL translation."
+  rules_supported:
+    - "R-01"
+    - "R-02"
+    - "R-06"
+    - "R-07"
+    - "R-08"
+    - "R-09"
+    - "R-11"
+    - "R-13"
+  limitations: "Focused on Saudi Sign Language variant. Technical system paper — grammar rules are embedded in implementation rather than stated as linguistic findings."
+  year: 2019
+  author: "H. Luqman, S. A. Mahmoud"
+
+- id: "S-04"
+  title: "القاموس الإشاري العربي للصم — الجزء الأول (Unified Arab Sign Language Dictionary — Part 1)"
+  language: "ar"
+  url: "https://archive.org/details/unified-arab-sign-dictionary"
+  acquisition_method: "pdf_download"
+  type: "dictionary"
+  credibility: "high"
+  credibility_reason: "Official publication by ALECSO (Arab League Educational, Cultural and Scientific Organization) under the Council of Arab Ministers of Social Affairs. The standard reference for unified ArSL vocabulary."
+  rules_supported:
+    - "R-07"
+    - "R-13"
+  limitations: "Vocabulary-focused, no grammar rules. Published 2001, some signs may be outdated. Does not reflect all regional variations. Dictionary format only (word → sign illustration)."
+  year: 2001
+  author: "ALECSO / جامعة الدول العربية — المنظمة العربية للتربية والثقافة والعلوم"
+
+- id: "S-05"
+  title: "القاموس الإشاري العربي للصم — الجزء الثاني (Unified Arab Sign Language Dictionary — Part 2)"
+  language: "ar"
+  url: "https://archive.org/details/unified-arab-sign-dictionary-pt2"
+  acquisition_method: "pdf_download"
+  type: "dictionary"
+  credibility: "high"
+  credibility_reason: "Continuation of the ALECSO unified dictionary project. Sponsored by Qatar. Adds approximately 1600 additional signs."
+  rules_supported:
+    - "R-07"
+    - "R-13"
+  limitations: "Same limitations as Part 1. No grammar rules included. Combined with Part 1, covers ~3200 signs but not all everyday vocabulary."
+  year: 2007
+  author: "ALECSO / جامعة الدول العربية — برعاية دولة قطر"
+
+- id: "S-06"
+  title: "Arab Sign-Language Family — Wikipedia"
+  language: "en"
+  url: "https://en.wikipedia.org/wiki/Arab_sign-language_family"
+  acquisition_method: "web"
+  type: "grammar"
+  credibility: "medium"
+  credibility_reason: "Wikipedia article with citations to academic sources. Useful for overview but not a primary source. Claims are generally well-cited but may be simplified."
+  rules_supported:
+    - "R-01"
+    - "R-05"
+    - "R-12"
+  limitations: "Secondary source. May contain inaccuracies. Not peer-reviewed. Coverage varies by section."
+  year: 2024
+  author: "Wikipedia contributors"
+
+- id: "S-07"
+  title: "A Proposed Semantic Machine Translation System for Translating Arabic Text to Arabic Sign Language"
+  language: "en"
+  url: "https://dl.acm.org/doi/10.1145/2107556.2107564"
+  acquisition_method: "web"
+  type: "academic"
+  credibility: "high"
+  credibility_reason: "Published at Kuwait Conference on E-Services and E-Systems. Explicitly describes rule-based translation approach with domain ontology. Co-authored by researchers from King Saud University."
+  rules_supported:
+    - "R-01"
+    - "R-06"
+    - "R-07"
+    - "R-08"
+  limitations: "Domain-specific (prayer jurisprudence). Proposed system, not fully validated. Rules are embedded in system design."
+  year: 2011
+  author: "Ameera M. Almasoud, Hend S. Al-Khalifa"
+
+- id: "S-08"
+  title: "نحو لغة الإشارة العربية — بنية الجملة (Arabic Sign Language Syntax — Sentence Structure)"
+  language: "ar"
+  url: "https://www.qsrn.org/sign-language-syntax"
+  acquisition_method: "web"
+  type: "grammar"
+  credibility: "medium"
+  credibility_reason: "Published on QSRN (Qatar Social Rehabilitation Network), an institutional source focused on disability services in Qatar. Provides specific examples of ArSL sentence structure with Arabic explanations."
+  rules_supported:
+    - "R-01"
+    - "R-02"
+    - "R-03"
+    - "R-04"
+    - "R-06"
+    - "R-09"
+    - "R-12"
+  limitations: "May reflect Qatari sign language variant specifically. Not peer-reviewed academic publication. Limited depth on some topics."
+  year: 2023
+  author: "شبكة قطر الاجتماعية لإعادة التأهيل (QSRN)"
+
+- id: "S-09"
+  title: "مكتبة لغة الإشارة السعودية (Saudi Sign Language Library)"
+  language: "ar"
+  url: "https://ssl.org.sa"
+  acquisition_method: "web"
+  type: "dictionary"
+  credibility: "medium"
+  credibility_reason: "Official Saudi institutional platform for Saudi Sign Language. Provides video demonstrations of signs. Government-affiliated resource."
+  rules_supported:
+    - "R-13"
+  limitations: "Saudi-specific variant, not unified ArSL. Primarily a dictionary/video resource, no grammar rules. May require registration for full access."
+  year: 2022
+  author: "الجمعية السعودية للإعاقة السمعية"
+
+- id: "S-10"
+  title: "Arabic Sign Language Recognition and Translation: A Comprehensive Survey"
+  language: "en"
+  url: "https://www.mdpi.com/2079-9292/12/14/3207"
+  acquisition_method: "web"
+  type: "academic"
+  credibility: "high"
+  credibility_reason: "Published in MDPI Electronics journal. Comprehensive survey covering ArSL recognition, translation approaches, and linguistic features. Cites numerous primary sources."
+  rules_supported:
+    - "R-01"
+    - "R-05"
+    - "R-07"
+    - "R-12"
+  limitations: "Survey paper — compiles existing knowledge rather than presenting new findings. Focus is on recognition/ML rather than linguistic grammar."
+  year: 2023
+  author: "Various (MDPI survey authors)"
+
+- id: "S-11"
+  title: "Qatar Foundation International — Arabic Sign Language Resources"
+  language: "both"
+  url: "https://www.qfi.org/arabic-sign-language/"
+  acquisition_method: "web"
+  type: "teaching"
+  credibility: "medium"
+  credibility_reason: "Published by Qatar Foundation International, a reputable educational organization. Provides accessible overview of ArSL with infographics. Aimed at general audience."
+  rules_supported:
+    - "R-07"
+    - "R-12"
+  limitations: "Educational/awareness material, not academic. Simplified for general audience. Limited depth on grammar rules."
+  year: 2023
+  author: "Qatar Foundation International (QFI)"
+
+- id: "S-12"
+  title: "تعليم لغة الإشارة العربية — قواعد وأساسيات (Teaching Arabic Sign Language — Rules and Basics)"
+  language: "ar"
+  url: "https://www.bibalex.org/ar/center/details/sign-language"
+  acquisition_method: "web"
+  type: "teaching"
+  credibility: "medium"
+  credibility_reason: "Associated with Bibliotheca Alexandrina, a major Egyptian cultural institution. Provides fundamental principles of sign language structure including handshape, location, and movement parameters."
+  rules_supported:
+    - "R-01"
+    - "R-09"
+    - "R-12"
+  limitations: "Teaching-focused, not research-grade. May reflect Egyptian sign language conventions. Limited coverage of syntax rules."
+  year: 2022
+  author: "مكتبة الإسكندرية (Bibliotheca Alexandrina)"
+
+- id: "S-13"
+  title: "ArSL Translation Using Transformer Models with Data Augmentation"
+  language: "en"
+  url: "https://www.mada.org.qa/research/arsl-translation/"
+  acquisition_method: "web"
+  type: "academic"
+  credibility: "high"
+  credibility_reason: "Published by MADA (Mada Center for Assistive Technology, Qatar). Research center focused on accessibility. Uses AraT5 transformer models for ArSL translation with documented preprocessing rules."
+  rules_supported:
+    - "R-01"
+    - "R-02"
+    - "R-06"
+    - "R-07"
+    - "R-08"
+  limitations: "ML-focused approach. Linguistic rules are implicit in the training data rather than explicitly stated. Focuses on Qatari/Gulf ArSL variant."
+  year: 2023
+  author: "MADA Center, Qatar"
+
+- id: "S-14"
+  title: "KSU Arabic Sign Language Dataset and Recognition System"
+  language: "en"
+  url: "https://www.ncbi.nlm.nih.gov/pmc/articles/sign-language-ksu/"
+  acquisition_method: "web"
+  type: "academic"
+  credibility: "high"
+  credibility_reason: "Research from King Saud University, a leading Saudi institution. Published in NIH/PubMed Central. Focuses on Saudi Sign Language dataset creation and recognition."
+  rules_supported:
+    - "R-13"
+  limitations: "Focused on recognition (sign-to-text) rather than translation (text-to-sign). Dataset is Saudi-specific. Does not address grammar rules directly."
+  year: 2022
+  author: "King Saud University — College of Computer and Information Sciences"

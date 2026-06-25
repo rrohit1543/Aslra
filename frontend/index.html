@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="نظام تحويل الجمل العربية إلى تسلسل إشارات لغة الإشارة العربية الموحدة — Arabic Sign Language Explainable Transcription Prototype">
+    <title>ArSL Transcriber — محوّل لغة الإشارة العربية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- ───────── Header ───────── -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">🤟</span>
+                <div>
+                    <h1 id="site-title">ArSL Transcriber</h1>
+                    <p class="subtitle">محوّل لغة الإشارة العربية الموحدة — Explainable Arabic Sign Language Transcription</p>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <button id="btn-show-rules" class="nav-btn" onclick="showPanel('rules')">القواعد Rules</button>
+                <button id="btn-show-sources" class="nav-btn" onclick="showPanel('sources')">المصادر Sources</button>
+                <button id="btn-show-dictionary" class="nav-btn" onclick="showPanel('dictionary')">القاموس Dictionary</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ───────── Main Content ───────── -->
+    <main class="main-content">
+        <!-- Input Section -->
+        <section class="input-section" id="input-section">
+            <div class="section-header">
+                <h2>أدخل جملة عربية — Enter an Arabic Sentence</h2>
+            </div>
+            <div class="input-area">
+                <textarea
+                    id="input-text"
+                    class="arabic-input"
+                    dir="rtl"
+                    placeholder="اكتب جملة عربية هنا... — Type an Arabic sentence here..."
+                    rows="3"
+                ></textarea>
+                <div class="input-actions">
+                    <div class="example-buttons">
+                        <span class="example-label">أمثلة:</span>
+                        <button class="example-btn" onclick="useExample('ذهب الطالب إلى المدرسة أمس')">ذهب الطالب إلى المدرسة أمس</button>
+                        <button class="example-btn" onclick="useExample('لم يذهب أحمد إلى المدرسة')">لم يذهب أحمد</button>
+                        <button class="example-btn" onclick="useExample('أين تعمل؟')">أين تعمل؟</button>
+                        <button class="example-btn" onclick="useExample('سأشتري ثلاثة كتب غداً')">سأشتري كتب غداً</button>
+                        <button class="example-btn" onclick="useExample('هذا الكتاب جميل جداً')">هذا الكتاب جميل</button>
+                    </div>
+                    <button id="btn-transcribe" class="submit-btn" onclick="transcribe()">
+                        <span class="btn-text">ترجم — Transcribe</span>
+                        <span class="btn-loader" style="display:none;">⏳</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Output Section (hidden until result) -->
+        <section class="output-section" id="output-section" style="display:none;">
+
+            <!-- 1. Gloss Sequence (prominent) -->
+            <div class="output-card gloss-card" id="gloss-card">
+                <div class="card-header">
+                    <h3>🤟 تسلسل الإشارات — Gloss Sequence</h3>
+                    <span class="confidence-badge" id="confidence-badge">—</span>
+                </div>
+                <div class="gloss-display" id="gloss-display" dir="rtl">—</div>
+            </div>
+
+            <!-- 2. Original Input Echo -->
+            <div class="output-card" id="input-echo-card">
+                <div class="card-header">
+                    <h3>📝 الإدخال الأصلي — Original Input</h3>
+                </div>
+                <div class="card-body">
+                    <div class="input-echo">
+                        <div class="echo-row">
+                            <span class="echo-label">الأصلي:</span>
+                            <span class="echo-value" id="echo-original" dir="rtl">—</span>
+                        </div>
+                        <div class="echo-row">
+                            <span class="echo-label">المُطبَّع:</span>
+                            <span class="echo-value" id="echo-normalized" dir="rtl">—</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Tokenization Table -->
+            <div class="output-card" id="tokenization-card">
+                <div class="card-header collapsible" onclick="toggleCard('tokenization-body')">
+                    <h3>🔤 التحليل الصرفي — Tokenization & Analysis</h3>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="card-body" id="tokenization-body">
+                    <div class="table-wrapper">
+                        <table class="token-table" id="token-table">
+                            <thead>
+                                <tr>
+                                    <th>الكلمة Token</th>
+                                    <th>نوع الكلمة POS</th>
+                                    <th>الجذع Lemma</th>
+                                    <th>التعريف Article</th>
+                                    <th>سابقة Prefix</th>
+                                    <th>خصائص Features</th>
+                                </tr>
+                            </thead>
+                            <tbody id="token-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Applied Rules -->
+            <div class="output-card" id="rules-card">
+                <div class="card-header collapsible" onclick="toggleCard('rules-body')">
+                    <h3>⚙️ القواعد المُطبَّقة — Applied Rules</h3>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="card-body" id="rules-body">
+                    <div id="applied-rules-list" class="rules-list">
+                        <p class="empty-state">لم يتم تطبيق أي قواعد — No rules applied</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Dictionary Status -->
+            <div class="output-card" id="dict-status-card">
+                <div class="card-header collapsible" onclick="toggleCard('dict-status-body')">
+                    <h3>📖 حالة القاموس — Dictionary Status</h3>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="card-body" id="dict-status-body">
+                    <div id="dict-status-list" class="dict-status-list">
+                        <p class="empty-state">—</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Evidence & Sources -->
+            <div class="output-card" id="evidence-card">
+                <div class="card-header collapsible" onclick="toggleCard('evidence-body')">
+                    <h3>📚 الأدلة والمصادر — Evidence & Sources</h3>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="card-body" id="evidence-body">
+                    <div id="evidence-list" class="evidence-list">
+                        <p class="empty-state">—</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Confidence Assessment -->
+            <div class="output-card" id="confidence-card">
+                <div class="card-header collapsible" onclick="toggleCard('confidence-body')">
+                    <h3>📊 تقييم الثقة — Confidence Assessment</h3>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="card-body" id="confidence-body">
+                    <div id="confidence-detail" class="confidence-detail">
+                        <p class="empty-state">—</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Expert Review Items -->
+            <div class="output-card expert-card" id="expert-card">
+                <div class="card-header collapsible" onclick="toggleCard('expert-body')">
+                    <h3>🔍 يحتاج مراجعة خبير — Expert Review Required</h3>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="card-body" id="expert-body">
+                    <div id="expert-review-list" class="expert-review-list">
+                        <p class="empty-state">لا توجد عناصر تحتاج مراجعة — No items require review</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Side Panels (Rules, Sources, Dictionary browser) -->
+        <div class="side-panel-overlay" id="side-panel-overlay" onclick="closePanel()" style="display:none;"></div>
+        <aside class="side-panel" id="side-panel" style="display:none;">
+            <div class="panel-header">
+                <h2 id="panel-title">—</h2>
+                <button class="panel-close" onclick="closePanel()">✕</button>
+            </div>
+            <div class="panel-body" id="panel-body">
+                <p>Loading...</p>
+            </div>
+        </aside>
+    </main>
+
+    <!-- ───────── Footer ───────── -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>ArSL Transcriber — نموذج أولي للبحث | Research Prototype</p>
+            <p class="footer-warning">⚠️ هذا ليس مترجمًا كاملاً. النتائج تحتاج مراجعة خبير — This is NOT a complete translator. Results require expert review.</p>
+        </div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
