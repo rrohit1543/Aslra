@@ -11,9 +11,7 @@
 ## 1. Project Overview
 
 **Project Name**: Arabic Sign Language Grammar Discovery & Explainable Transcription Prototype  
-**Project Directory**: `C:\Users\rrohi\.gemini\antigravity\scratch\arsl-transcriber\`  
-**Status**: 🟡 IN PROGRESS — Phase 0 (Setup)  
-**Last Updated**: 2026-06-25T18:35:00+05:30  
+**Project Directory**: `arsl-transcriber/`  
 
 ### What We Are Building
 
@@ -23,12 +21,6 @@ A research-driven prototype where a user can:
 3. See exactly which grammar rules were applied and why
 4. See source references for each rule
 5. See confidence levels and items requiring expert review
-
-### What We Are NOT Building
-- A sign language video generator
-- A machine learning model
-- A production-ready translator
-- A complete Arabic NLP pipeline
 
 ### Core Principles
 - **Explainability over accuracy** — every output must trace back to a rule and source
@@ -427,36 +419,7 @@ Institutional sites to check:
 
 ---
 
-## 6. Progress Tracker
-
-| Phase | Status | Started | Completed | Agent/Notes |
-|-------|--------|---------|-----------|-------------|
-| Phase 0: Setup | 🟡 In Progress | 2026-06-25 | — | Creating structure |
-| Phase 1: Source Discovery | 🔴 Not Started | — | — | — |
-| Phase 2: Rule Extraction | 🔴 Not Started | — | — | — |
-| Phase 3: Dictionary | 🔴 Not Started | — | — | — |
-| Phase 4: Backend | 🔴 Not Started | — | — | — |
-| Phase 5: Frontend | 🔴 Not Started | — | — | — |
-| Phase 6: Documentation | 🔴 Not Started | — | — | — |
-
----
-
-## 7. Decisions Log
-
-All significant decisions made during the project:
-
-| # | Date | Decision | Rationale | Decided By |
-|---|------|----------|-----------|------------|
-| D-01 | 2026-06-25 | Use FastAPI backend | User preference + enables CAMeL Tools for Arabic NLP | User |
-| D-02 | 2026-06-25 | Vanilla HTML/CSS/JS frontend | No build step, fast iteration, assignment doesn't require framework | Agent + User |
-| D-03 | 2026-06-25 | Serve frontend via FastAPI StaticFiles | Single `uvicorn` command to run everything | Agent |
-| D-04 | 2026-06-25 | Rule engine (not LLM) for runtime transcription | Explainability requirement — every output must trace to a rule | Agent |
-| D-05 | 2026-06-25 | YAML for all data files | Human-readable, expert-editable, easy to review | Agent |
-| D-06 | 2026-06-25 | CAMeL Tools with fallback to simple analyzer | Best available Arabic NLP, but may have install issues | Agent |
-
----
-
-## 8. Known Risks & Mitigations
+## 6. Known Risks & Mitigations
 
 | Risk | Impact | Mitigation |
 |------|--------|------------|
@@ -468,58 +431,25 @@ All significant decisions made during the project:
 
 ---
 
-## 9. Agent Instructions
-
-### Before starting any phase:
-1. Read this entire README.md
-2. Check the Progress Tracker (section 6) — only start a phase if its prerequisite is ✅
-3. Respect your phase boundary — do NOT modify files outside your phase scope
-4. Update the Progress Tracker when you start and finish
-
-### When finishing a phase:
-1. Update the Progress Tracker in this README
-2. List what you completed and what (if anything) is incomplete
-3. Note any issues or blockers for the next phase
-
-### If you find a problem in a previous phase's output:
-1. Do NOT fix it yourself (unless it's a trivial typo)
-2. Document the problem clearly
-3. Report it so the appropriate phase agent can fix it
-
-### File ownership by phase:
-
-| File(s) | Owner Phase | Other Phases May Read | Other Phases May Write |
-|---------|-------------|----------------------|----------------------|
-| README.md | Phase 0 | All | Phase 6 (progress updates only) |
-| backend/data/*.yaml | Phases 1-3 | Phases 4-6 | ❌ No |
-| backend/*.py | Phase 4 | Phases 5-6 | ❌ No |
-| frontend/* | Phase 5 | Phase 6 | ❌ No |
-| docs/* | Phases 1-2, 6 | All | ❌ No |
-| requirements.txt | Phase 0, 4 | All | ❌ No |
-
----
-
-## 10. How to Run (for verification agents)
+## 7. How to Run
 
 ```bash
-# 1. Navigate to project root
-cd C:\Users\rrohi\.gemini\antigravity\scratch\arsl-transcriber
+# 1. Clone the repository
+git clone https://github.com/rrohit1543/Aslra.git
+cd Aslra
 
 # 2. Create virtual environment
 python -m venv venv
-venv\Scripts\activate
+venv\Scripts\activate       # Windows
+# source venv/bin/activate  # macOS/Linux
 
 # 3. Install dependencies
 pip install -r requirements.txt
 
 # 4. Run the server
-uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn backend.main:app --host 0.0.0.0 --port 8000
 
 # 5. Open in browser
 # http://localhost:8000        → Frontend
 # http://localhost:8000/docs   → API docs (Swagger UI)
 ```
-
----
-
-*End of context file. All agents must read this before beginning work.*
