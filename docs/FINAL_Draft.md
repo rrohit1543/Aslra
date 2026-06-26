@@ -1,4 +1,4 @@
-# Final Submission: Arabic Sign Language Grammar Discovery & Explainable Transcription Prototype
+#  Arabic Sign Language Grammar Discovery & Explainable Transcription Prototype
 
 🚀 **Live Demo:** [https://aslra.onrender.com/](https://aslra.onrender.com/)
 📦 **Source Code:** [https://github.com/rrohit1543/Aslra](https://github.com/rrohit1543/Aslra)
