@@ -58,10 +58,17 @@ We conducted systematic searches using **both English and Arabic** queries to en
 11. `Luqman Mahmoud "Automatic translation Arabic text Arabic sign language"` LINK - https://link.springer.com/article/10.1007/s10209-018-0622-8
 12. `Arabic Sign Language text to gloss translation rules morphological analysis` LINK - https://nafath.mada.org.qa/nafath-article/mcn2705/
 
-**Arabic Queries Executed (6):**
 
-1. `ترتيب الجملة في لغة الإشارة العربية` LINK- https://doi.org/10.1109/ICTA.2015.7426932 
-2. `"القاموس الإشاري العربي" PDF تحميل جامعة الدول العربية` LINK- https://en.wikipedia.org/wiki/Arab_sign-language_family
+**Arabic Queries Executed (6):**
+1. `قواعد لغة الإشارة العربية الموحدة` LINK- https://pure.kfupm.edu.sa/en/publications/automatic-translation-of-arabic-text-to-arabic-sign-language/
+2. `ترتيب الجملة في لغة الإشارة العربية` LINK- https://ieeexplore.ieee.org/document/7426932
+3. `معجم لغة الإشارة العربية الموحدة` LINK- https://en.wikipedia.org/wiki/Arab_sign-language_family
+4. `تعليم لغة الإشارة للصم العرب` LINK- https://nafath.mada.org.qa/nafath-article/mcn2705/
+5. `نحو لغة الإشارة العربية بنية الجملة` LINK- https://pure.uva.nl/ws/files/4282918/144182_thesis.pdf
+6. `"القاموس الإشاري العربي" PDF تحميل جامعة الدول العربية` LINK- https://en.wikipedia.org/wiki/Arab_sign-language_family
+
+
+
 
 ### Sources Found: 14 Total (5 Arabic, 8 English, 1 Bilingual) 
 
