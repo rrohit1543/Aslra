@@ -45,28 +45,25 @@ We deliberately chose a **rule-based engine over an LLM** for the runtime transc
 We conducted systematic searches using **both English and Arabic** queries to ensure we did not miss Arabic-language primary sources.
 
 **English Queries Executed (12):**
-1. `"Unified Arabic Sign Language" grammar rules`
-2. `"Arabic Sign Language" sentence structure gloss`
-3. `ArSL word order syntax morphology`
-4. `"Arabic Sign Language" dictionary PDF`
-5. `"Arabic Sign Language" linguistic analysis`
-6. `Arab League ALECSO sign language unified dictionary`
-7. `Saudi Egyptian Jordanian deaf association sign language research`
-8. `King Saud University Arabic sign language research`
-9. `Almasoud Alwohaibi "Arabic text to Arabic sign language" rule-based translation`
-10. `Almohimeed Al-Khalifa Wald "Arabic text to ArSL gloss" Southampton`
-11. `Luqman Mahmoud "Automatic translation Arabic text Arabic sign language"`
-12. `Arabic Sign Language text to gloss translation rules morphological analysis`
+1. `"Unified Arabic Sign Language" grammar rules`  lINK--https://doi.org/10.1007/s10209-018-0622-8
+2. `"Arabic Sign Language" sentence structure gloss` lINK- https://doi.org/10.1109/ICTA.2015.7426932
+3. `ArSL word order syntax morphology`  LINK - https://doi.org/10.1007/s10209-018-0622-8
+4. `"Arabic Sign Language" dictionary PDF`  LINK- https://www.researchgate.net/publication/252066233_Arabic_Text_to_Arabic_Sign_Language_Translation_System_for_the_Deaf_and_Hearing-Impaired_Community
+5. `"Arabic Sign Language" linguistic analysis` LINK - https://en.wikipedia.org/wiki/Arab_sign-language_family
+6. `Arab League ALECSO sign language unified dictionary` LINK -https://en.wikipedia.org/wiki/Arab_sign-language_family
+7. `Saudi Egyptian Jordanian deaf association sign language research` LINK- https://en.wikipedia.org/wiki/Arab_sign-language_family
+8. `King Saud University Arabic sign language research` LINK - https://www.signwriting.org/archive/docs7/sw0674_SA_Paper_ArabicText_to_ArabicSign_Almasoud_AlKhalifa.pdf
+9. `Almasoud Alwohaibi "Arabic text to Arabic sign language" rule-based translation` LINK - https://www.signwriting.org/archive/docs7/sw0674_SA_Paper_ArabicText_to_ArabicSign_Almasoud_AlKhalifa.pdf
+10. `Almohimeed Al-Khalifa Wald "Arabic text to ArSL gloss" Southampton` LINK - https://www.researchgate.net/publication/252066233_Arabic_Text_to_Arabic_Sign_Language_Translation_System_for_the_Deaf_and_Hearing-Impaired_Community
+11. `Luqman Mahmoud "Automatic translation Arabic text Arabic sign language"` LINK - https://link.springer.com/article/10.1007/s10209-018-0622-8
+12. `Arabic Sign Language text to gloss translation rules morphological analysis` LINK - https://nafath.mada.org.qa/nafath-article/mcn2705/
 
 **Arabic Queries Executed (6):**
-1. `قواعد لغة الإشارة العربية الموحدة`
-2. `ترتيب الجملة في لغة الإشارة العربية`
-3. `معجم لغة الإشارة العربية الموحدة`
-4. `تعليم لغة الإشارة للصم العرب`
-5. `نحو لغة الإشارة العربية بنية الجملة`
-6. `"القاموس الإشاري العربي" PDF تحميل جامعة الدول العربية`
 
-### Sources Found: 14 Total (5 Arabic, 8 English, 1 Bilingual)
+1. `ترتيب الجملة في لغة الإشارة العربية` LINK- https://doi.org/10.1109/ICTA.2015.7426932 
+2. `"القاموس الإشاري العربي" PDF تحميل جامعة الدول العربية` LINK- https://en.wikipedia.org/wiki/Arab_sign-language_family
+
+### Sources Found: 14 Total (5 Arabic, 8 English, 1 Bilingual) 
 
 | ID | Title | Language | Type | Credibility | Year | Rules Supported |
 |----|-------|----------|------|-------------|------|-----------------|

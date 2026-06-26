@@ -1,4 +1,4 @@
-# Project ArSL Transcriber: A Simple Explanation
+# Project ArSL Transcriber:
 
 ## The Problem We Wanted to Solve
 Arabic Sign Language (ArSL) is a beautiful and complex language used by deaf communities across the Arab world. While spoken and written Arabic follow specific grammar rules (like usually putting the verb at the beginning of a sentence), Sign Language has a completely different structure! 
